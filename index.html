@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Babel des Piments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F0F4FF;
+      --card-bg: #fff;
+      --text: #1A1A2E;
+      --text-muted: #6B7280;
+      --accent: #FF4D00;
+      --border: rgba(26,26,46,0.08);
+      --radius: 20px;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Nunito', sans-serif;
+      min-height: 100vh;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 24px 16px;
+    }
+
+    /* ── Header ── */
+    header { text-align: center; margin-bottom: 16px; }
+
+    /* ── App layout ── */
+    #app {
+      display: flex;
+      flex-direction: row;
+      gap: 28px;
+      align-items: flex-start;
+      flex: 1;
+      min-height: 0;
+      /* centré sur le grid : largeur totale = cartouche + gap + grid max */
+      width: min(calc(100vw - 48px), calc(168px + 28px + 780px));
+    }
+
+    /* ── Cartouche gauche ── */
+    #cartouche {
+      width: 168px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding-top: 4px;
+    }
+
+    /* ── Main (grid area) ── */
+    #main {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .kicker {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--accent);
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(32px, 5vw, 60px);
+      line-height: 1;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    h1 span { color: var(--accent); }
+
+    .subtitle { display: none; }
+
+    /* ── Source dropdown ── */
+    .source-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+    }
+
+.source-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px 9px 14px;
+      background: var(--card-bg);
+      border: 2px solid var(--border);
+      border-radius: 50px;
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      box-shadow: 0 2px 8px rgba(26,26,46,0.08);
+      user-select: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .source-btn:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(255,77,0,0.15); }
+    .source-btn.open  { border-color: var(--accent); }
+
+    .source-btn .chevron { font-size: 10px; color: var(--text-muted); transition: transform 0.2s; }
+    .source-btn.open .chevron { transform: rotate(180deg); }
+
+    .source-panel {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--card-bg);
+      border: 2px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 12px 40px rgba(26,26,46,0.14);
+      padding: 6px;
+      display: none;
+      z-index: 100;
+      min-width: 190px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .source-btn.open .source-panel { display: block; }
+
+    .source-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: background 0.1s;
+    }
+
+    .source-option:hover  { background: #FFF0EB; }
+    .source-option.active { background: #FF4D00; color: #fff; }
+
+    /* ── Flag filter (dans le cartouche) ── */
+    .lang-filter {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 4px;
+      width: 100%;
+    }
+
+    .flag-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 8px 4px 6px;
+      background: var(--card-bg);
+      border: 2px solid var(--border);
+      border-radius: 50px;
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      transition: opacity 0.2s, border-color 0.15s, background 0.15s;
+    }
+
+    .flag-btn .fe { font-size: 15px; }
+    .flag-btn:hover { border-color: #aaa; }
+    .flag-btn.off { opacity: 0.25; border-style: dashed; }
+
+    /* Titre de section dans le cartouche */
+    .cartouche-label {
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* ── Grid wrap ── */
+    .grid-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 0;
+    }
+
+    /* ── Grid — always a perfect square ── */
+    .grid {
+      --gap: 10px;
+      --size: min(min(calc(100vw - 260px), calc(100vh - 140px)), 780px);
+      width: var(--size);
+      height: var(--size);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: var(--gap);
+    }
+
+    /* ── Tile — square ── */
+    .tile {
+      background: var(--card-bg);
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid var(--border);
+      box-shadow: 0 2px 8px rgba(26,26,46,0.06);
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 0;
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+
+    .tile:hover {
+      transform: rotate(var(--tilt, 0deg)) translateY(-3px) scale(1.04);
+      box-shadow: 0 10px 28px rgba(26,26,46,0.13);
+    }
+
+    .tile-swatch {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tile-icon {
+      width: 38%;
+      height: 38%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .confusion-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 3;
+      font-family: 'Nunito', sans-serif;
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(8px);
+    }
+
+    .badge-CHAOS { color: #E53E3E; }
+    .badge-HIGH  { color: #D97706; }
+    .badge-MED   { color: #3B82F6; }
+    .badge-LOW   { color: #22C55E; }
+
+    .tile-body {
+      padding: 6px 9px 8px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .tile-name {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(10px, 1.2vw, 14px);
+      line-height: 1.15;
+      color: var(--text);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .shu-bar { display: flex; gap: 3px; align-items: center; }
+
+    .shu-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: #E5E7EB;
+    }
+    .shu-dot.hot { background: var(--accent); }
+
+    .tile-species {
+      font-size: clamp(8px, 0.9vw, 10px);
+      font-weight: 700;
+      color: var(--text-muted);
+      font-style: italic;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex-shrink: 0;
+    }
+
+    /* ── Pager ── */
+    .pager {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 36px;
+    }
+
+    .pager-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      background: var(--card-bg);
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--text);
+      transition: border-color 0.15s, background 0.15s, transform 0.1s;
+    }
+
+    .pager-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); transform: scale(1.08); }
+    .pager-btn:disabled { opacity: 0.25; cursor: default; }
+
+    .pager-dots { display: flex; gap: 7px; }
+
+    .pager-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: #D1D5DB;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .pager-dot.active { background: var(--accent); transform: scale(1.3); }
+
+    /* ── Footer ── */
+    footer { display: none; }
+
+    /* ══ ORBITAL (contenu dans #main) ══ */
+    #orbital-frame {
+      position: absolute;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 10;
+      isolation: isolate;
+    }
+
+    #orbital-frame.active {
+      display: flex;
+      pointer-events: all;
+    }
+
+    /* Grid dims quand orbital actif — appliqué sur #grid entier, pas sur les tiles */
+    #grid.has-focus {
+      opacity: 0.12;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Bouton fermer */
+    .orbital-close {
+      position: absolute;
+      top: 12px; right: 12px;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      background: var(--card-bg);
+      font-size: 15px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted);
+      font-weight: 900;
+      transition: border-color 0.15s, color 0.15s;
+      z-index: 20;
+    }
+    .orbital-close:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Tile centrale */
+    .orbital-center {
+      position: relative;
+      z-index: 10;
+      --cs: min(min(26vw, 26vh), 240px);
+      width: var(--cs);
+      height: var(--cs);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 28px 72px rgba(26,26,46,0.26);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      transform: scale(0.35);
+      opacity: 0;
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  opacity 0.3s ease;
+    }
+
+    #orbital-frame.active .orbital-center { transform: scale(1); opacity: 1; }
+
+    .orbital-center .tile-swatch {
+      flex: 1; min-height: 0;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .orbital-center .tile-icon { width: 44%; height: 44%; position: relative; z-index: 2; }
+    .orbital-center .confusion-badge {
+      position: absolute; top: 10px; right: 10px; z-index: 3;
+      font-family: 'Nunito', sans-serif; font-size: 9px; font-weight: 900;
+      letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px;
+      border-radius: 20px; background: rgba(255,255,255,0.88); backdrop-filter: blur(8px);
+    }
+    .orbital-center .tile-body { padding: 10px 16px 16px; flex-shrink: 0; display: flex; flex-direction: column; gap: 4px; }
+    .orbital-center .tile-name { font-family: 'Fredoka One', cursive; font-size: 17px; line-height: 1.1; }
+    .orbital-center .shu-bar { display: flex; gap: 4px; }
+    .orbital-center .shu-dot { width: 6px; height: 6px; border-radius: 50%; background: #E5E7EB; }
+    .orbital-center .shu-dot.hot { background: var(--accent); }
+    .orbital-center .tile-species { font-size: 10px; font-weight: 700; color: var(--text-muted); font-style: italic; }
+
+    /* Anneau orbital — z-index au-dessus de la tile centrale */
+    .orbital-ring {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 12;
+    }
+
+    /* Nœud — blob : rotation légère, taille plus généreuse */
+    .orbital-node {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 148px;
+      transform: translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(0.35);
+      opacity: 0;
+      transition:
+        transform 0.52s cubic-bezier(0.34, 1.56, 0.64, 1),
+        opacity   0.28s ease;
+      pointer-events: auto;
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 10px 13px;
+      box-shadow: 0 6px 24px rgba(26,26,46,0.13);
+      border: 2px solid var(--border);
+    }
+
+    .orbital-node.visible {
+      opacity: 1;
+      transform: translate(calc(-50% + var(--nx)), calc(-50% + var(--ny))) rotate(var(--rot, 0deg)) scale(1);
+    }
+
+    .node-flag  { font-size: 20px; line-height: 1; margin-bottom: 4px; }
+    .node-lang  { font-size: 9px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 3px; }
+    .node-name  { font-family: 'Fredoka One', cursive; font-size: 15px; line-height: 1.2; color: var(--text); margin-bottom: 5px; }
+    .node-etym  { font-size: 10px; color: var(--text-muted); line-height: 1.45; }
+    .node-ff    { font-size: 10px; color: var(--accent); font-style: italic; margin-top: 4px; line-height: 1.4; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <span class="kicker">🌶️ Linguistique végétale · Genre Capsicum</span>
+    <h1>Babel des <span>Piments</span></h1>
+  </header>
+
+  <div id="app">
+    <!-- ── Cartouche gauche ── -->
+    <aside id="cartouche">
+      <div class="source-wrap">
+        <span class="cartouche-label">Langue source</span>
+        <div class="source-btn" id="sourceBtn">
+          <span id="sBtnFlag">🇫🇷</span>
+          <span id="sBtnName">Français</span>
+          <span class="chevron">▼</span>
+          <div class="source-panel" id="sourcePanel"></div>
+        </div>
+      </div>
+
+      <div class="source-wrap">
+        <span class="cartouche-label">Langues affichées</span>
+        <div class="lang-filter" id="langFilter"></div>
+      </div>
+    </aside>
+
+    <!-- ── Zone grid + orbital ── -->
+    <div id="main">
+      <div class="grid-wrap">
+        <div class="grid" id="grid"></div>
+        <div class="pager" id="pager"></div>
+      </div>
+      <!-- Orbital — contenu dans #main, pas d'overlay viewport -->
+      <div id="orbital-frame">
+        <button class="orbital-close" id="orbitalClose">✕</button>
+        <div class="orbital-center" id="orbitalCenter"></div>
+        <div class="orbital-ring"   id="orbitalRing"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./data.js"></script>
+  <script>
+    const LANGS = [
+      { code:'FR',  name:'Français',    flag:'🇫🇷' },
+      { code:'EN',  name:'English',     flag:'🇬🇧' },
+      { code:'DE',  name:'Deutsch',     flag:'🇩🇪' },
+      { code:'ES',  name:'Español',     flag:'🇪🇸' },
+      { code:'PT',  name:'Português',   flag:'🇵🇹' },
+      { code:'IT',  name:'Italiano',    flag:'🇮🇹' },
+      { code:'NL',  name:'Nederlands',  flag:'🇳🇱' },
+      { code:'JP',  name:'日本語',       flag:'🇯🇵' },
+      { code:'ZH',  name:'中文',         flag:'🇨🇳' },
+      { code:'TH',  name:'ภาษาไทย',     flag:'🇹🇭' },
+      { code:'HI',  name:'हिन्दी',       flag:'🇮🇳' },
+      { code:'SW',  name:'Kiswahili',   flag:'🇰🇪' },
+      { code:'AR',  name:'العربية',      flag:'🇸🇦' },
+      { code:'TR',  name:'Türkçe',      flag:'🇹🇷' },
+      { code:'VI',  name:'Tiếng Việt',  flag:'🇻🇳' },
+      { code:'FA',  name:'فارسی',        flag:'🇮🇷' },
+      { code:'NAH', name:'Nāhuatl',     flag:'🇲🇽' },
+      { code:'HU',  name:'Magyar',      flag:'🇭🇺' },
+      { code:'KO',  name:'한국어',        flag:'🇰🇷' },
+      { code:'CR',  name:'Kreyòl',      flag:'🇭🇹' },
+    ];
+
+    // Ordre : du plus évident au plus tricky
+    var ORDER = [
+      'bell-pepper',    // CHAOS — poivron/paprika/capsicum/pimiento
+      'paprika',        // HIGH  — légume en HU/DE, épice en FR/EN
+      'chili-generic',  // CHAOS — chili/chilli/chile, 3 graphies
+      'pepper-word',    // CHAOS — erreur de Colomb 1492
+      'jalapeno',       // MED   — devient Chipotle séché
+      'banana-pepper',  // HIGH  — pepperoni = charcuterie US ou légume IT
+      'cayenne',        // MED   — nommé Guyane, cultivé ailleurs
+      'habanero',       // MED   — nommé La Havane, absent de Cuba
+      'scotch-bonnet',  // MED   — confondu avec habanero
+      'birds-eye',      // MED   — souris TH vs oiseau FR
+      'bhut-jolokia',   // MED   — ghost pepper = marketing
+      'pepperoncini',   // HIGH  — générique IT vs spécifique US
+      'poblano-ancho',  // HIGH  — un fruit, deux noms
+      'serrano',        // MED   — "jalapeño chaud" (faux)
+      'espelette',      // LOW   — cas de clarté (ironie)
+      'carolina-reaper',// LOW   — sans ambiguïté
+      'pimiento-pimento',// HIGH — olive stuffing ES ≠ EN
+      'sichuan-pepper', // CHAOS — pas un Capsicum du tout
+      'shishito-padron',// HIGH  — roulette JP vs ES
+      'aji-amarillo',   // MED   — inconnu hors Amériques
+      'gochugaru',      // MED   — poudre ≠ piment frais
+      'rocoto-locoto',  // MED   — nom régional Bolivia/Pérou
+    ];
+
+    var PAGE_SIZE = 16;
+    var currentPage = 0;
+    var closeTimer = null;
+
+    var sorted = ORDER.map(function(id) {
+      return peppers.find(function(p){ return p.id === id; });
+    }).filter(Boolean);
+
+    var totalPages = Math.ceil(sorted.length / PAGE_SIZE);
+
+    var sourceLang = 'FR';
+    var activeLangs = new Set(['FR','EN','DE','ES','PT','IT','NL','NAH']);
+    var currentFocusPepper = null;
+
+    function getName(pepper) {
+      var t = pepper.translations[sourceLang];
+      if (t) return t.name;
+      var en = pepper.translations['EN'];
+      return en ? en.name : pepper.id.replace(/-/g,' ');
+    }
+
+    function shuLevel(pepper) {
+      return Math.min(5, Math.ceil((pepper.shu_max / 2200000) * 5));
+    }
+
+    function iconHTML(pepper) {
+      if (pepper.icon_svg) return pepper.icon_svg;
+      return '<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">'
+        + '<ellipse cx="32" cy="38" rx="9" ry="16" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>'
+        + '<path d="M32 22 C32 17 35 13 33 9 C31 13 29 17 32 22Z" fill="rgba(255,255,255,0.35)"/>'
+        + '</svg>';
+    }
+
+    /* ── Dropdown ── */
+    var sourceBtn  = document.getElementById('sourceBtn');
+    var sourcePanel = document.getElementById('sourcePanel');
+    var sBtnFlag   = document.getElementById('sBtnFlag');
+    var sBtnName   = document.getElementById('sBtnName');
+
+    LANGS.forEach(function(l) {
+      var opt = document.createElement('div');
+      opt.className = 'source-option' + (l.code === sourceLang ? ' active' : '');
+      opt.dataset.code = l.code;
+      opt.innerHTML = '<span>' + l.flag + '</span><span>' + l.name + '</span>';
+      opt.addEventListener('click', function(e) {
+        e.stopPropagation();
+        sourceLang = l.code;
+        sBtnFlag.textContent = l.flag;
+        sBtnName.textContent = l.name;
+        sourcePanel.querySelectorAll('.source-option').forEach(function(o){ o.classList.remove('active'); });
+        opt.classList.add('active');
+        sourceBtn.classList.remove('open');
+        renderGrid();
+        if (currentFocusPepper) {
+          var nameEl = document.querySelector('#orbitalCenter .tile-name');
+          if (nameEl) nameEl.textContent = getName(currentFocusPepper);
+        }
+      });
+      sourcePanel.appendChild(opt);
+    });
+
+    sourceBtn.addEventListener('click', function() { sourceBtn.classList.toggle('open'); });
+    document.addEventListener('click', function(e) {
+      if (!sourceBtn.contains(e.target)) sourceBtn.classList.remove('open');
+    });
+
+    /* ── Flag filter ── */
+    var filterEl = document.getElementById('langFilter');
+    LANGS.forEach(function(l) {
+      var btn = document.createElement('button');
+      btn.className = 'flag-btn' + (activeLangs.has(l.code) ? '' : ' off');
+      btn.dataset.code = l.code;
+      btn.innerHTML = '<span class="fe">' + l.flag + '</span><span>' + l.code + '</span>';
+      btn.addEventListener('click', function() {
+        if (activeLangs.has(l.code)) { activeLangs.delete(l.code); btn.classList.add('off'); }
+        else                          { activeLangs.add(l.code);    btn.classList.remove('off'); }
+        if (currentFocusPepper) refreshOrbital();
+      });
+      filterEl.appendChild(btn);
+    });
+
+    /* ── Grid ── */
+    function renderGrid() {
+      var grid = document.getElementById('grid');
+      grid.innerHTML = '';
+      var page = sorted.slice(currentPage * PAGE_SIZE, (currentPage + 1) * PAGE_SIZE);
+      page.forEach(function(p) {
+        var level = shuLevel(p);
+        var dots = '';
+        for (var i = 0; i < 5; i++) {
+          dots += '<span class="shu-dot' + (i < level ? ' hot' : '') + '"></span>';
+        }
+        var tile = document.createElement('div');
+        tile.className = 'tile';
+        tile.dataset.id = p.id;
+        tile.innerHTML =
+          '<div class="tile-swatch" style="background:' + p.bg + '">'
+          +   '<div class="tile-icon">' + iconHTML(p) + '</div>'
+          +   '<span class="confusion-badge badge-' + p.confusion + '">' + p.confusion + '</span>'
+          + '</div>'
+          + '<div class="tile-body">'
+          +   '<div class="tile-name">' + getName(p) + '</div>'
+          +   '<div class="shu-bar">' + dots + '</div>'
+          +   '<div class="tile-species">' + p.species + '</div>'
+          + '</div>';
+        var tilt = (Math.random() * 7 - 3.5).toFixed(1) + 'deg';
+        tile.style.setProperty('--tilt', tilt);
+        tile.style.transform = 'rotate(' + tilt + ')';
+        (function(p){ tile.addEventListener('click', function(e) { e.stopPropagation(); openOrbital(p); }); })(p);
+        grid.appendChild(tile);
+      });
+      renderPager();
+    }
+
+    /* ── Pager ── */
+    function goToPage(n) {
+      currentPage = n;
+      renderGrid();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderPager() {
+      var el = document.getElementById('pager');
+      el.innerHTML = '';
+
+      var prev = document.createElement('button');
+      prev.className = 'pager-btn';
+      prev.innerHTML = '←';
+      prev.disabled = currentPage === 0;
+      prev.addEventListener('click', function(){ goToPage(currentPage - 1); });
+      el.appendChild(prev);
+
+      var dots = document.createElement('div');
+      dots.className = 'pager-dots';
+      for (var i = 0; i < totalPages; i++) {
+        (function(idx) {
+          var dot = document.createElement('div');
+          dot.className = 'pager-dot' + (idx === currentPage ? ' active' : '');
+          dot.addEventListener('click', function(){ goToPage(idx); });
+          dots.appendChild(dot);
+        })(i);
+      }
+      el.appendChild(dots);
+
+      var next = document.createElement('button');
+      next.className = 'pager-btn';
+      next.innerHTML = '→';
+      next.disabled = currentPage === totalPages - 1;
+      next.addEventListener('click', function(){ goToPage(currentPage + 1); });
+      el.appendChild(next);
+    }
+
+    /* ══ ORBITAL (dans #main) ══ */
+    function orbitalRadius(count) {
+      var mainEl = document.getElementById('main');
+      var r = mainEl.getBoundingClientRect();
+      var minDim = Math.min(r.width, r.height);
+      /* rayon : marge franche entre tile et nœuds */
+      return Math.max(210, Math.min(minDim * 0.36, count * 22 + 130));
+    }
+
+    function buildNode(node, i, total, radius) {
+      var angle = (i / total) * 2 * Math.PI - Math.PI / 2;
+      /* jitter déterministe — blob organique sans dérives vers le texte */
+      var jitter = 10;
+      var jx = Math.round(Math.sin(i * 2.4 + total * 0.7) * jitter);
+      var jy = Math.round(Math.cos(i * 1.9 + total * 1.1) * jitter);
+      var nx = Math.round(Math.cos(angle) * radius) + jx;
+      var ny = Math.round(Math.sin(angle) * radius) + jy;
+      /* légère rotation par nœud */
+      var rot = (Math.sin(i * 3.1 + total) * 4).toFixed(1) + 'deg';
+      var el = document.createElement('div');
+      el.className = 'orbital-node';
+      el.dataset.langCode = node.lang.code;
+      el.style.setProperty('--nx', nx + 'px');
+      el.style.setProperty('--ny', ny + 'px');
+      el.style.setProperty('--rot', rot);
+      el.innerHTML =
+          '<div class="node-flag">'  + node.lang.flag  + '</div>'
+        + '<div class="node-lang">'  + node.lang.name  + '</div>'
+        + '<div class="node-name">'  + node.trans.name + '</div>'
+        + (node.trans.etymology    ? '<div class="node-etym">' + node.trans.etymology    + '</div>' : '')
+        + (node.trans.false_friend ? '<div class="node-ff">⚠ ' + node.trans.false_friend + '</div>' : '');
+      return el;
+    }
+
+    function activeNodes(pepper) {
+      var result = [];
+      LANGS.forEach(function(l) {
+        if (!activeLangs.has(l.code)) return;
+        var t = pepper.translations[l.code];
+        if (t) result.push({ lang: l, trans: t });
+      });
+      return result;
+    }
+
+    function openOrbital(pepper) {
+      if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+      currentFocusPepper = pepper;
+      var center = document.getElementById('orbitalCenter');
+      var level = shuLevel(pepper);
+      var dots = '';
+      for (var i = 0; i < 5; i++)
+        dots += '<span class="shu-dot' + (i < level ? ' hot' : '') + '"></span>';
+
+      center.innerHTML =
+          '<div class="tile-swatch" style="background:' + pepper.bg + '">'
+        + '<div class="tile-icon">' + iconHTML(pepper) + '</div>'
+        + '<span class="confusion-badge badge-' + pepper.confusion + '">' + pepper.confusion + '</span>'
+        + '</div>'
+        + '<div class="tile-body">'
+        + '<div class="tile-name">' + getName(pepper) + '</div>'
+        + '<div class="shu-bar">' + dots + '</div>'
+        + '<div class="tile-species">' + pepper.species + '</div>'
+        + '</div>';
+
+      var nodes = activeNodes(pepper);
+      var radius = orbitalRadius(nodes.length);
+      var ring = document.getElementById('orbitalRing');
+      ring.innerHTML = '';
+      nodes.forEach(function(node, i) {
+        var el = buildNode(node, i, nodes.length, radius);
+        ring.appendChild(el);
+        setTimeout(function() { el.classList.add('visible'); }, 60 + i * 30);
+      });
+
+      var frame = document.getElementById('orbital-frame');
+      frame.style.display = 'flex';
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          frame.classList.add('active');
+        });
+      });
+      document.getElementById('grid').classList.add('has-focus');
+    }
+
+    function refreshOrbital() {
+      if (!currentFocusPepper) return;
+      var ring = document.getElementById('orbitalRing');
+      var nodes = activeNodes(currentFocusPepper);
+      var radius = orbitalRadius(nodes.length);
+
+      ring.querySelectorAll('.orbital-node').forEach(function(el) {
+        if (!nodes.some(function(n) { return n.lang.code === el.dataset.langCode; })) {
+          el.classList.remove('visible');
+          setTimeout(function() { if (el.parentNode) el.parentNode.removeChild(el); }, 500);
+        }
+      });
+
+      nodes.forEach(function(node, i) {
+        var angle = (i / nodes.length) * 2 * Math.PI - Math.PI / 2;
+        var jitter = 10;
+        var jx = Math.round(Math.sin(i * 2.4 + nodes.length * 0.7) * jitter);
+        var jy = Math.round(Math.cos(i * 1.9 + nodes.length * 1.1) * jitter);
+        var nx = Math.round(Math.cos(angle) * radius) + jx;
+        var ny = Math.round(Math.sin(angle) * radius) + jy;
+        var existing = ring.querySelector('[data-lang-code="' + node.lang.code + '"]');
+        if (existing) {
+          existing.style.setProperty('--nx', nx + 'px');
+          existing.style.setProperty('--ny', ny + 'px');
+        } else {
+          var el = buildNode(node, i, nodes.length, radius);
+          ring.appendChild(el);
+          setTimeout(function() { el.classList.add('visible'); }, 30);
+        }
+      });
+    }
+
+    function closeOrbital() {
+      currentFocusPepper = null;
+      var frame = document.getElementById('orbital-frame');
+      frame.querySelectorAll('.orbital-node').forEach(function(n) { n.classList.remove('visible'); });
+      frame.classList.remove('active');
+      document.getElementById('grid').classList.remove('has-focus');
+      closeTimer = setTimeout(function() { frame.style.display = 'none'; closeTimer = null; }, 560);
+    }
+
+    document.getElementById('orbitalClose').addEventListener('click', closeOrbital);
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && currentFocusPepper) closeOrbital();
+    });
+
+    /* ══ THUD — clic dans l'espace négatif ══ */
+    function triggerThud() {
+      var tiles = document.querySelectorAll('#grid .tile');
+      // Phase 1 : jolt — ultra-rapide, 3px max
+      tiles.forEach(function(tile) {
+        tile.style.transition = 'transform 0.04s ease-out, box-shadow 0.04s ease-out';
+        tile.style.transitionDelay = Math.round(Math.random() * 12) + 'ms';
+        var tilt = tile.style.getPropertyValue('--tilt') || '0deg';
+        tile.style.transform = 'rotate(' + tilt + ') translateY(-3px) scale(1.006)';
+        tile.style.boxShadow = '0 6px 18px rgba(26,26,46,0.13)';
+      });
+      // Phase 2 : retombée avec nouveau skew — 55ms après le jolt
+      setTimeout(function() {
+        tiles.forEach(function(tile) {
+          var newTilt = (Math.random() * 7 - 3.5).toFixed(1) + 'deg';
+          tile.style.transition = 'transform 0.07s cubic-bezier(0.34,1.4,0.64,1), box-shadow 0.07s ease-in';
+          tile.style.transitionDelay = Math.round(Math.random() * 10) + 'ms';
+          tile.style.setProperty('--tilt', newTilt);
+          tile.style.transform = 'rotate(' + newTilt + ')';
+          tile.style.boxShadow = '';
+        });
+        // Restaure la transition normale
+        setTimeout(function() {
+          tiles.forEach(function(t) {
+            t.style.transition = '';
+            t.style.transitionDelay = '';
+          });
+        }, 90);
+      }, 55);
+    }
+
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.source-btn, .flag-btn, #cartouche')) return;
+      if (currentFocusPepper) {
+        if (e.target.closest('.orbital-node, .orbital-center, .orbital-close')) return;
+        closeOrbital();
+        return;
+      }
+      if (!e.target.closest('button, a, .tile')) triggerThud();
+    });
+
+    renderGrid();
+  </script>
+</body>
+</html>

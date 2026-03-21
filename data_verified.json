@@ -1,0 +1,2175 @@
+{
+  "peppers": [
+    {
+      "id": "bell-pepper",
+      "species": "Capsicum annuum",
+      "shu_min": 0,
+      "shu_max": 100,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"3\" width=\"4\" height=\"10\" rx=\"2\" fill=\"#43A047\"/><path d=\"M14 20C14 14 22 12 32 12C42 12 50 14 50 20C50 28 50 37 44 46C41 50 38 54 35 56C34 57 33 58 32 58C31 58 30 57 29 56C26 54 23 50 20 46C14 37 14 28 14 20Z\" fill=\"#FF5252\"/><ellipse cx=\"23\" cy=\"23\" rx=\"5\" ry=\"8\" fill=\"rgba(255,255,255,0.25)\" transform=\"rotate(-15,23,23)\"/></svg>",
+      "bg": "linear-gradient(145deg, #43A047 0%, #A5D6A7 100%)",
+      "confusion": "CHAOS",
+      "translations": {
+        "FR": {
+          "name": "Poivron",
+          "etymology": "Du latin \"piper\" (poivre) — même racine fautive que Columbus",
+          "false_friend": "Jamais piquant en français — mais \"piment\" peut désigner les deux"
+        },
+        "EN": {
+          "name": "Bell pepper / Sweet pepper",
+          "etymology": "Bell = forme en cloche",
+          "false_friend": "≠ Pepper (poivre noir, Piper nigrum) — deux règnes différents"
+        },
+        "DE": {
+          "name": "Paprika",
+          "etymology": "Du serbe \"papar\" (poivre)",
+          "false_friend": "= aussi l'épice séchée en poudre — le même mot pour le légume ET l'épice"
+        },
+        "ES": {
+          "name": "Pimiento",
+          "etymology": "Du latin \"pigmentum\"",
+          "false_friend": "≠ Pimentón = version séchée/poudre"
+        },
+        "PT": {
+          "name": "Pimentão",
+          "etymology": "Augmentatif de pimenta (poivre)",
+          "false_friend": "≠ Pimenta = poivre ou piment fort"
+        },
+        "IT": {
+          "name": "Peperone",
+          "etymology": "Du latin \"piper\"",
+          "false_friend": "≠ Pepperoni US = charcuterie (confusion célèbre)"
+        },
+        "NL": {
+          "name": "Paprika",
+          "etymology": "Emprunté à l'allemand/hongrois",
+          "false_friend": "= le légume ET l'épice, comme en allemand"
+        },
+        "JP": {
+          "name": "ピーマン (Pīman)",
+          "etymology": "Du français \"piment\"",
+          "false_friend": "Désigne spécifiquement le poivron vert — le rouge se dit パプリカ (papurika)"
+        },
+        "ZH": {
+          "name": "灯笼椒 (Dēnglóng jiāo)",
+          "etymology": "\"Poivre-lanterne\"",
+          "false_friend": "辣椒 = piment fort ; 甜椒 = poivron doux — la distinction existe"
+        },
+        "TH": {
+          "name": "พริกหวาน (Phrik waan)",
+          "etymology": "\"Piment doux\"",
+          "false_friend": "≠ พริก (phrik) = piment fort"
+        },
+        "HI": {
+          "name": "शिमला मिर्च (Shimla mirch)",
+          "etymology": "Shimla = ville coloniale britannique par où il est arrivé",
+          "false_friend": "≠ मिर्च seul = piment fort"
+        },
+        "SW": {
+          "name": "Pilipili hoho",
+          "etymology": "\"Pilipili\" = tout poivre/piment en swahili",
+          "false_friend": "≠ Pilipili kali = piment fort"
+        },
+        "AR": {
+          "name": "فلفل رومي (Filfil rūmī)",
+          "etymology": "\"Poivre romain/byzantin\"",
+          "false_friend": "فلفل = terme générique pour poivre et piment"
+        },
+        "TR": {
+          "name": "Dolmalık biber",
+          "etymology": "\"Biber pour farcir\"",
+          "false_friend": "Biber = tout poivron/piment selon contexte"
+        },
+        "HU": {
+          "name": "Paprika",
+          "etymology": "Origine sud-slave",
+          "false_friend": "= le légume frais ET la poudre — confusion maximale avec FR/EN"
+        },
+        "KO": {
+          "name": "파프리카 (Papeurika)",
+          "etymology": "Emprunté à l'anglais \"paprika\"",
+          "false_friend": "≠ 고추 (gochu) = piment fort coréen"
+        },
+        "VI": {
+          "name": "Ớt chuông",
+          "etymology": "\"Piment cloche\"",
+          "false_friend": "≠ Ớt = piment fort"
+        },
+        "FA": {
+          "name": "فلفل دلمه‌ای (Felfel-e dolme-ei)",
+          "etymology": "\"Poivron à farcir\"",
+          "false_friend": "فلفل = terme générique"
+        },
+        "NAH": {
+          "name": "Chīlli tōtōnqui",
+          "etymology": "Racine nahuatl : chīlli = piment",
+          "false_friend": "Ironiquement, le mot anglais \"chilli\" vient d'ici"
+        },
+        "CR": {
+          "name": "Piman dou",
+          "etymology": "\"Piment doux\" en créole haïtien",
+          "false_friend": "≠ Piman fort = tout piment piquant"
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": false,
+          "source_url": "",
+          "extract": ""
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "DE": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ES": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "PT": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "IT": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "NL": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "JP": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ZH": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "TH": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "HI": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "SW": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "AR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "TR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "VI": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "FA": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "HU": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "KO": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "NAH": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "CR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 0
+    },
+    {
+      "id": "jalapeno",
+      "species": "Capsicum annuum",
+      "shu_min": 2500,
+      "shu_max": 8000,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"3\" width=\"4\" height=\"9\" rx=\"2\" fill=\"#1B5E20\"/><path d=\"M32 12C23 12 16 19 16 29C16 39 22 51 29 57C30 58 32 59 34 57C41 51 48 39 48 29C48 19 41 12 32 12Z\" fill=\"#2E7D32\"/><ellipse cx=\"24\" cy=\"24\" rx=\"4\" ry=\"8\" fill=\"rgba(255,255,255,0.25)\" transform=\"rotate(-12,24,24)\"/></svg>",
+      "bg": "linear-gradient(145deg, #1B5E20 0%, #66BB6A 100%)",
+      "confusion": "MED",
+      "translations": {
+        "FR": {
+          "name": "Jalapeño / Piment vert mexicain",
+          "etymology": "De Xalapa, ville de Veracruz, Mexique",
+          "false_friend": "Séché+fumé → devient Chipotle — même fruit, autre nom"
+        },
+        "EN": {
+          "name": "Jalapeño pepper",
+          "etymology": "Idem",
+          "false_friend": "Chipotle ≠ autre espèce — juste le jalapeño transformé"
+        },
+        "ES": {
+          "name": "Chile jalapeño / Cuaresmeño",
+          "etymology": "Cuaresmeño = \"de Carême\", région alternative",
+          "false_friend": "Ancho, Mulato, Chipotle sont parfois confondus dans la grande famille"
+        },
+        "MX": {
+          "name": "Chile jalapeño",
+          "etymology": "Xalapa = \"source d'eau sur du sable\" en nahuatl",
+          "false_friend": "Chipotle = même piment fumé (chipotle = chili fumé en nahuatl)"
+        },
+        "JP": {
+          "name": "ハラペーニョ (Harapēnyo)",
+          "etymology": "Translittération",
+          "false_friend": ""
+        },
+        "ZH": {
+          "name": "墨西哥辣椒 (Mòxīgē làjiāo)",
+          "etymology": "\"Piment mexicain\"",
+          "false_friend": "≠ 辣椒 générique"
+        },
+        "DE": {
+          "name": "Jalapeño",
+          "etymology": "Emprunté",
+          "false_friend": ""
+        },
+        "IT": {
+          "name": "Jalapeño",
+          "etymology": "Emprunté",
+          "false_friend": ""
+        },
+        "AR": {
+          "name": "خوت الخليج (ou جالابينيو)",
+          "etymology": "Translittération ou \"piment du golfe\"",
+          "false_friend": ""
+        },
+        "KO": {
+          "name": "할라피뇨 (Hallapinyo)",
+          "etymology": "Translittération",
+          "false_friend": ""
+        },
+        "NAH": {
+          "name": "Xalapeño / Xalappan chīlli",
+          "etymology": "Xal-apan = \"sur le sable à la source\"",
+          "false_friend": "Origine étymologique directe"
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": true,
+          "source_url": "https://en.wikipedia.org/wiki/Jalape%C3%B1o",
+          "extract": "The jalapeño is a medium-sized chili pepper pod type cultivar of the species Capsicum annuum. A mature jalapeño chili is 5–10 cm (2–4 in) long and 25–"
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "DE": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ES": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "IT": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "JP": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ZH": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "AR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "KO": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "NAH": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 8
+    },
+    {
+      "id": "chili-generic",
+      "species": "Capsicum annuum / chinense / frutescens",
+      "shu_min": 0,
+      "shu_max": 2200000,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"3\" width=\"4\" height=\"9\" rx=\"2\" fill=\"#43A047\"/><path d=\"M32 12C24 12 16 18 14 28C12 38 16 50 24 57C27 59 30 60 32 58C36 56 42 49 46 41C50 33 50 22 44 17C41 14 37 12 32 12Z\" fill=\"#F44336\"/><ellipse cx=\"22\" cy=\"24\" rx=\"3\" ry=\"7\" fill=\"rgba(255,255,255,0.28)\" transform=\"rotate(-20,22,24)\"/></svg>",
+      "bg": "linear-gradient(145deg, #E53935 0%, #FF7043 100%)",
+      "confusion": "CHAOS",
+      "translations": {
+        "EN": {
+          "name": "Chili pepper (US) / Chilli (UK)",
+          "etymology": "Du nahuatl \"chīlli\"",
+          "false_friend": "Chili = plat texan / Chilli = piment UK / Chile = espagnol : même mot, 3 orthographes"
+        },
+        "ES": {
+          "name": "Chile",
+          "etymology": "Nahuatl direct",
+          "false_friend": "≠ País Chile — coïncidence (étymologie débattue)"
+        },
+        "FR": {
+          "name": "Piment",
+          "etymology": "Du latin \"pigmentum\" (colorant)",
+          "false_friend": "Aux Antilles = doux ; en métropole = fort — même mot, sens opposés"
+        },
+        "IT": {
+          "name": "Peperoncino",
+          "etymology": "Diminutif de peperone (poivron)",
+          "false_friend": "Ironique : le diminutif \"petit poivron\" désigne le piment fort"
+        },
+        "HI": {
+          "name": "मिर्च (Mirch)",
+          "etymology": "Du persan \"murich\"",
+          "false_friend": "Terme générique — Shimla mirch = poivron, mirch = piment fort"
+        },
+        "DE": {
+          "name": "Chili / Peperoni",
+          "etymology": "Peperoni emprunté à l'italien",
+          "false_friend": "≠ Pepperoni US = charcuterie"
+        },
+        "PT": {
+          "name": "Pimenta",
+          "etymology": "Du latin \"pigmentum\"",
+          "false_friend": "≠ Pimentão = poivron"
+        },
+        "SW": {
+          "name": "Pilipili",
+          "etymology": "Redoublement expressif",
+          "false_friend": "Terme générique pour tout le genre"
+        },
+        "AR": {
+          "name": "فلفل حار (Filfil hārr)",
+          "etymology": "\"Poivre chaud\"",
+          "false_friend": "≠ فلفل رومي = poivron doux"
+        },
+        "NAH": {
+          "name": "Chīlli",
+          "etymology": "Racine originelle — \"chose qui pique\"",
+          "false_friend": "L'origine de tous ces mots"
+        },
+        "ZH": {
+          "name": "辣椒 (Làjiāo)",
+          "etymology": "\"Poivre ardent\"",
+          "false_friend": "≠ 花椒 (huājiāo) = poivre de Sichuan (pas un Capsicum)"
+        },
+        "KO": {
+          "name": "고추 (Gochu)",
+          "etymology": "Sino-coréen \"poivre ancien\"",
+          "false_friend": "= générique pour tous les piments en Corée"
+        },
+        "TH": {
+          "name": "พริก (Phrik)",
+          "etymology": "Origine thaïe propre",
+          "false_friend": "+ qualificatif requis : ขี้หนู = oiseau, หวาน = doux..."
+        },
+        "VI": {
+          "name": "Ớt",
+          "etymology": "Origine vietnamienne",
+          "false_friend": "+ qualificatif : ớt hiểm = fort, ớt chuông = poivron"
+        },
+        "CR": {
+          "name": "Piman",
+          "etymology": "Du français \"piment\"",
+          "false_friend": "Piman dou (doux) vs Piman fort — distinction explicite"
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": false,
+          "source_url": "",
+          "extract": ""
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "DE": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ES": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "PT": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "IT": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ZH": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "TH": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "HI": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "SW": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "AR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "VI": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "KO": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "NAH": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "CR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 0
+    },
+    {
+      "id": "paprika",
+      "species": "Capsicum annuum",
+      "shu_min": 0,
+      "shu_max": 500,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"3\" width=\"4\" height=\"9\" rx=\"2\" fill=\"#43A047\"/><ellipse cx=\"32\" cy=\"38\" rx=\"14\" ry=\"22\" fill=\"#E53935\"/><ellipse cx=\"26\" cy=\"24\" rx=\"4\" ry=\"7\" fill=\"rgba(255,255,255,0.25)\" transform=\"rotate(-10,26,24)\"/></svg>",
+      "bg": "linear-gradient(145deg, #D84315 0%, #FF8A65 100%)",
+      "confusion": "HIGH",
+      "translations": {
+        "HU": {
+          "name": "Paprika",
+          "etymology": "Origine sud-slave, via serbe \"papar\"",
+          "false_friend": "= le légume frais (poivron rouge) ET la poudre séchée"
+        },
+        "DE": {
+          "name": "Paprika",
+          "etymology": "Emprunté au hongrois",
+          "false_friend": "= légume ET épice — idem HU"
+        },
+        "FR": {
+          "name": "Paprika",
+          "etymology": "Emprunté via allemand",
+          "false_friend": "= uniquement l'épice en poudre — jamais le légume"
+        },
+        "EN": {
+          "name": "Paprika",
+          "etymology": "Emprunté au hongrois via allemand",
+          "false_friend": "= uniquement l'épice, jamais le légume (= bell pepper en EN)"
+        },
+        "ES": {
+          "name": "Pimentón",
+          "etymology": "Augmentatif de pimiento",
+          "false_friend": "≠ Pimiento = légume frais"
+        },
+        "PT": {
+          "name": "Páprica",
+          "etymology": "Emprunté",
+          "false_friend": "= l'épice uniquement"
+        },
+        "IT": {
+          "name": "Paprica",
+          "etymology": "Emprunté",
+          "false_friend": ""
+        },
+        "AR": {
+          "name": "بابريكا (Bābrīkā)",
+          "etymology": "Translittération",
+          "false_friend": ""
+        },
+        "TR": {
+          "name": "Kırmızı toz biber",
+          "etymology": "\"Poivre rouge en poudre\"",
+          "false_friend": ""
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": true,
+          "source_url": "https://en.wikipedia.org/wiki/Paprika",
+          "extract": "Paprika is a spice made from dried and ground red peppers, Capsicum annuum. It can have varying levels of heat, but the peppers used for hot paprika t"
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "DE": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ES": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "PT": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "IT": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "AR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "TR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "HU": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 9
+    },
+    {
+      "id": "pepperoncini",
+      "species": "Capsicum annuum",
+      "shu_min": 100,
+      "shu_max": 500,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"3\" width=\"4\" height=\"8\" rx=\"2\" fill=\"#558B2F\"/><path d=\"M32 11C27 11 21 16 20 26C19 36 21 48 27 56C29 59 31 60 33 58C39 51 45 39 44 27C43 17 38 11 32 11Z\" fill=\"#8BC34A\"/><path d=\"M21 33Q32 30 43 33\" stroke=\"rgba(255,255,255,0.3)\" stroke-width=\"1.5\" fill=\"none\"/><path d=\"M21 42Q32 39 43 42\" stroke=\"rgba(255,255,255,0.3)\" stroke-width=\"1.5\" fill=\"none\"/><ellipse cx=\"25\" cy=\"20\" rx=\"3\" ry=\"5\" fill=\"rgba(255,255,255,0.28)\" transform=\"rotate(-10,25,20)\"/></svg>",
+      "bg": "linear-gradient(145deg, #558B2F 0%, #AED581 100%)",
+      "confusion": "HIGH",
+      "translations": {
+        "IT": {
+          "name": "Peperoncino",
+          "etymology": "Diminutif de peperone",
+          "false_friend": "= TOUS les piments forts (générique) — pas ce piment précis"
+        },
+        "EN": {
+          "name": "Pepperoncini",
+          "etymology": "Emprunté à l'italien pluriel",
+          "false_friend": "= CE piment doux précis en bocal — pas le générique italien"
+        },
+        "GR": {
+          "name": "Φλωρίνης (Florinis) / Friggitello",
+          "etymology": "Friggitello = \"petit qui frît\"",
+          "false_friend": ""
+        },
+        "FR": {
+          "name": "Piment doux allongé",
+          "etymology": "Description morphologique",
+          "false_friend": "Rarement distingué du poivron en cuisine française"
+        },
+        "DE": {
+          "name": "Peperoni",
+          "etymology": "Emprunté à l'italien",
+          "false_friend": "≠ Pepperoni US = charcuterie (confusion fréquente)"
+        },
+        "ES": {
+          "name": "Guindilla verde",
+          "etymology": "\"Petite grenade verte\"",
+          "false_friend": ""
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": true,
+          "source_url": "https://en.wikipedia.org/wiki/Friggitello",
+          "extract": "Friggitello is a sweet Italian chili pepper of the species Capsicum annuum. It is also known as the \"Golden Greek pepper\", \"Sweet Italian pepper\", or "
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "DE": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ES": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "IT": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 14
+    },
+    {
+      "id": "espelette",
+      "species": "Capsicum annuum",
+      "shu_min": 1500,
+      "shu_max": 2500,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"3\" width=\"4\" height=\"9\" rx=\"2\" fill=\"#558B2F\"/><path d=\"M32 12C26 12 20 18 19 28C18 39 22 52 29 58C30 59 32 60 34 58C41 52 46 38 45 28C44 18 38 12 32 12Z\" fill=\"#B71C1C\"/><ellipse cx=\"26\" cy=\"22\" rx=\"3\" ry=\"6\" fill=\"rgba(255,255,255,0.25)\" transform=\"rotate(-12,26,22)\"/></svg>",
+      "bg": "linear-gradient(145deg, #C62828 0%, #FF8A80 100%)",
+      "confusion": "LOW",
+      "translations": {
+        "FR": {
+          "name": "Piment d'Espelette",
+          "etymology": "De Espelette / Ezpeleta, village basque",
+          "false_friend": "AOP depuis 2002 — nom protégé, cas rare de clarté absolue"
+        },
+        "EU": {
+          "name": "Ezpeletako Biperra",
+          "etymology": "Basque : biperra = piment",
+          "false_friend": "Nom officiel en langue basque"
+        },
+        "ES": {
+          "name": "Pimiento de Ezpeleta",
+          "etymology": "Adaptation espagnole",
+          "false_friend": ""
+        },
+        "EN": {
+          "name": "Espelette pepper",
+          "etymology": "Calque du français",
+          "false_friend": ""
+        },
+        "DE": {
+          "name": "Espelette-Pfeffer",
+          "etymology": "Pfeffer = poivre/piment",
+          "false_friend": ""
+        },
+        "IT": {
+          "name": "Peperone di Espelette",
+          "etymology": "",
+          "false_friend": ""
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": true,
+          "source_url": "https://en.wikipedia.org/wiki/Espelette_pepper",
+          "extract": "The Espelette pepper is a variety of Capsicum annuum that is cultivated in the French commune of Espelette, Pyrénées-Atlantiques, traditionally the no"
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "DE": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ES": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "IT": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 14
+    },
+    {
+      "id": "habanero",
+      "species": "Capsicum chinense",
+      "shu_min": 100000,
+      "shu_max": 350000,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"3\" width=\"4\" height=\"9\" rx=\"2\" fill=\"#43A047\"/><path d=\"M16 22C16 16 22 12 32 12C42 12 48 16 48 22C48 30 46 38 40 44C38 46 35 48 32 48C29 48 26 46 24 44C18 38 16 30 16 22Z\" fill=\"#FF8F00\"/><path d=\"M16 26Q32 31 48 26\" stroke=\"#E65100\" stroke-width=\"2\" fill=\"none\"/><ellipse cx=\"24\" cy=\"18\" rx=\"6\" ry=\"4\" fill=\"rgba(255,255,255,0.3)\" transform=\"rotate(-10,24,18)\"/></svg>",
+      "bg": "linear-gradient(145deg, #E65100 0%, #FFD740 100%)",
+      "confusion": "MED",
+      "translations": {
+        "ES": {
+          "name": "Chile habanero",
+          "etymology": "De La Habana (La Havane, Cuba)",
+          "false_friend": "Nommé Cuba — mais quasi absent de Cuba, roi du Yucatán"
+        },
+        "EN": {
+          "name": "Habanero pepper",
+          "etymology": "Idem",
+          "false_friend": "≈ Scotch Bonnet (même espèce, cultivar distinct — arôme différent)"
+        },
+        "FR": {
+          "name": "Piment habanero",
+          "etymology": "Calque de l'espagnol",
+          "false_friend": "Souvent confondu avec le Scotch Bonnet en cuisine française"
+        },
+        "JM": {
+          "name": "Scotch Bonnet",
+          "etymology": "Forme évoquant un chapeau écossais",
+          "false_friend": "Même espèce (C. chinense), cultivar différent — souvent vendus interchangeables"
+        },
+        "MX": {
+          "name": "Chile habanero",
+          "etymology": "Yucatán = centre de production réel",
+          "false_friend": ""
+        },
+        "DE": {
+          "name": "Habanero",
+          "etymology": "Emprunté",
+          "false_friend": ""
+        },
+        "JP": {
+          "name": "ハバネロ (Habanero)",
+          "etymology": "Translittération",
+          "false_friend": ""
+        },
+        "ZH": {
+          "name": "哈瓦那辣椒 (Hāwǎnà làjiāo)",
+          "etymology": "\"Piment de La Havane\"",
+          "false_friend": ""
+        },
+        "KO": {
+          "name": "하바네로 (Habanero)",
+          "etymology": "Translittération",
+          "false_friend": ""
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": true,
+          "source_url": "https://en.wikipedia.org/wiki/Habanero",
+          "extract": "The habanero is a pungent cultivar of Capsicum chinense chili pepper. Unripe habaneros are green, and they color as they mature. The most common color"
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "DE": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ES": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "JP": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ZH": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "KO": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 11
+    },
+    {
+      "id": "pepper-word",
+      "species": "Capsicum spp. / Piper nigrum",
+      "shu_min": 0,
+      "shu_max": 2200000,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"13\" cy=\"28\" r=\"5\" fill=\"#37474F\"/><circle cx=\"20\" cy=\"20\" r=\"4\" fill=\"#546E7A\"/><circle cx=\"21\" cy=\"36\" r=\"4\" fill=\"#546E7A\"/><path d=\"M13 23C16 20 18 20 20 20M13 33C16 36 18 36 21 36M20 20C20 28 20 28 21 36\" stroke=\"#2E7D32\" stroke-width=\"2\" fill=\"none\"/><line x1=\"30\" y1=\"18\" x2=\"34\" y2=\"46\" stroke=\"rgba(255,255,255,0.65)\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><line x1=\"27\" y1=\"32\" x2=\"37\" y2=\"32\" stroke=\"rgba(255,255,255,0.65)\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><path d=\"M44 12C40 12 36 16 36 22C36 29 40 40 44 46C45 48 47 48 48 46C52 40 56 29 56 22C56 16 52 12 48 12Z\" fill=\"#F44336\"/><rect x=\"46\" y=\"5\" width=\"4\" height=\"9\" rx=\"2\" fill=\"#43A047\"/></svg>",
+      "bg": "linear-gradient(145deg, #1565C0 0%, #64B5F6 100%)",
+      "confusion": "CHAOS",
+      "translations": {
+        "EN": {
+          "name": "Pepper",
+          "etymology": "Vieux anglais \"pipor\", du latin \"piper\" (Piper nigrum)",
+          "false_friend": "= poivre noir (Piper) ET piment (Capsicum) — deux règnes, zéro lien"
+        },
+        "FR": {
+          "name": "Poivre / Piment",
+          "etymology": "Deux mots distincts — la langue a résolu l'ambiguïté",
+          "false_friend": "EN \"pepper\" = FR \"poivre\" OU \"piment\" selon contexte"
+        },
+        "DE": {
+          "name": "Pfeffer / Paprika / Peperoni",
+          "etymology": "Trois mots pour trois réalités",
+          "false_friend": "L'allemand a trois mots là où l'anglais en a un seul"
+        },
+        "ES": {
+          "name": "Pimienta / Pimiento",
+          "etymology": "Pimienta = poivre ; pimiento = capsicum",
+          "false_friend": "≠ Pimienta ≠ Pimiento — distinction maintenue"
+        },
+        "IT": {
+          "name": "Pepe / Peperone / Peperoncino",
+          "etymology": "Famille lexicale du latin \"piper\"",
+          "false_friend": "Trois mots, trois réalités : poivre / poivron / piment"
+        },
+        "PT": {
+          "name": "Pimenta / Pimentão",
+          "etymology": "Pimenta = poivre/piment ; pimentão = poivron",
+          "false_friend": ""
+        },
+        "NAH": {
+          "name": "Chīlli (Capsicum) + importé",
+          "etymology": "Nahuatl n'avait pas le poivre noir — Columbus a fait le raccourci inverse",
+          "false_friend": "Erreur de Columbus 1492 : cherchait Piper, trouva Capsicum"
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": true,
+          "source_url": "https://en.wikipedia.org/wiki/Pepper",
+          "extract": "Pepper(s) may refer to:"
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "DE": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ES": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "PT": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "IT": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "NAH": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 11
+    },
+    {
+      "id": "serrano",
+      "species": "Capsicum annuum",
+      "shu_min": 10000,
+      "shu_max": 25000,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"3\" width=\"4\" height=\"9\" rx=\"2\" fill=\"#1B5E20\"/><path d=\"M32 12C28 12 22 17 20 26C18 36 20 48 26 56C28 59 30 60 32 59C34 58 36 55 38 51C42 43 44 32 42 24C40 17 36 12 32 12Z\" fill=\"#388E3C\"/><ellipse cx=\"25\" cy=\"22\" rx=\"3\" ry=\"6\" fill=\"rgba(255,255,255,0.28)\" transform=\"rotate(-15,25,22)\"/></svg>",
+      "bg": "linear-gradient(145deg, #2E7D32 0%, #A5D6A7 100%)",
+      "confusion": "MED",
+      "translations": {
+        "ES": {
+          "name": "Chile serrano",
+          "etymology": "\"De la sierra (montagne)\"",
+          "false_friend": "5× plus fort que jalapeño — souvent substitué à tort"
+        },
+        "EN": {
+          "name": "Serrano pepper",
+          "etymology": "Calque",
+          "false_friend": "Parfois étiqueté \"hot jalapeño\" — incorrect"
+        },
+        "FR": {
+          "name": "Piment serrano",
+          "etymology": "Calque",
+          "false_friend": "Rarement distingué du jalapeño en épicerie française"
+        },
+        "MX": {
+          "name": "Chile serrano",
+          "etymology": "Sierra Madre — régions de Puebla, Hidalgo",
+          "false_friend": ""
+        },
+        "DE": {
+          "name": "Serrano-Chili",
+          "etymology": "Emprunté",
+          "false_friend": ""
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": true,
+          "source_url": "https://en.wikipedia.org/wiki/Serrano_pepper",
+          "extract": "The serrano pepper is a type of chili pepper that originated in the mountainous regions of the Mexican states of Puebla and Hidalgo. The Scoville rati"
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "DE": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ES": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 17
+    },
+    {
+      "id": "poblano-ancho",
+      "species": "Capsicum annuum",
+      "shu_min": 1000,
+      "shu_max": 2000,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"29\" y=\"2\" width=\"6\" height=\"9\" rx=\"3\" fill=\"#1B5E20\"/><path d=\"M10 18C10 14 20 12 32 12C44 12 54 14 54 18C54 28 50 40 44 50C40 56 36 59 32 59C28 59 24 56 20 50C14 40 10 28 10 18Z\" fill=\"#1B5E20\"/><ellipse cx=\"20\" cy=\"24\" rx=\"6\" ry=\"9\" fill=\"rgba(255,255,255,0.18)\" transform=\"rotate(-15,20,24)\"/></svg>",
+      "bg": "linear-gradient(145deg, #1B5E20 0%, #4CAF50 100%)",
+      "confusion": "HIGH",
+      "translations": {
+        "MX": {
+          "name": "Poblano (frais) / Ancho (séché)",
+          "etymology": "Poblano = de Puebla ; Ancho = \"large\" en espagnol",
+          "false_friend": "Un fruit, deux noms selon état de transformation"
+        },
+        "ES": {
+          "name": "Chile poblano / Chile ancho",
+          "etymology": "Idem",
+          "false_friend": ""
+        },
+        "EN": {
+          "name": "Poblano / Ancho chile",
+          "etymology": "Emprunté",
+          "false_friend": "Souvent vendu \"Pasilla\" aux USA — erreur commerciale répandue"
+        },
+        "FR": {
+          "name": "Piment poblano",
+          "etymology": "Calque",
+          "false_friend": "Quasi inconnu — importé sous \"piment mexicain\""
+        },
+        "DE": {
+          "name": "Poblano-Chili",
+          "etymology": "Emprunté",
+          "false_friend": ""
+        },
+        "IT": {
+          "name": "Peperone poblano",
+          "etymology": "Calque",
+          "false_friend": ""
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": false,
+          "source_url": "",
+          "extract": ""
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "DE": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ES": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "IT": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 0
+    },
+    {
+      "id": "scotch-bonnet",
+      "species": "Capsicum chinense",
+      "shu_min": 100000,
+      "shu_max": 350000,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"3\" width=\"4\" height=\"8\" rx=\"2\" fill=\"#43A047\"/><ellipse cx=\"32\" cy=\"36\" rx=\"22\" ry=\"18\" fill=\"#FF8F00\"/><path d=\"M12 32Q32 26 52 32\" stroke=\"#E65100\" stroke-width=\"2.5\" fill=\"none\"/><path d=\"M14 40Q32 36 50 40\" stroke=\"#FF6F00\" stroke-width=\"1.5\" fill=\"none\"/><ellipse cx=\"20\" cy=\"26\" rx=\"6\" ry=\"4\" fill=\"rgba(255,255,255,0.3)\" transform=\"rotate(-15,20,26)\"/></svg>",
+      "bg": "linear-gradient(145deg, #E65100 0%, #FFD54F 100%)",
+      "confusion": "MED",
+      "translations": {
+        "JM": {
+          "name": "Scotch bonnet",
+          "etymology": "Forme évoquant un chapeau écossais \"tam o'shanter\"",
+          "false_friend": "≈ Habanero (même espèce C. chinense) — arôme floral distinct"
+        },
+        "FR": {
+          "name": "Piment antillais",
+          "etymology": "Terme géographique, pas botanique",
+          "false_friend": "Vague — désigne plusieurs cultivars différents"
+        },
+        "BB": {
+          "name": "Bonney pepper",
+          "etymology": "Propre à la Barbade",
+          "false_friend": ""
+        },
+        "GH": {
+          "name": "Kpakposhito",
+          "etymology": "Twi (Ghana)",
+          "false_friend": ""
+        },
+        "EN": {
+          "name": "Scotch bonnet",
+          "etymology": "Idem jamaïcain",
+          "false_friend": "≠ Habanero au sens strict — même espèce, cultivar différent"
+        },
+        "SW": {
+          "name": "Pilipili kichaa",
+          "etymology": "\"Piment fou\"",
+          "false_friend": ""
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": true,
+          "source_url": "https://en.wikipedia.org/wiki/Scotch_bonnet",
+          "extract": "Scotch bonnet is a variety of chili pepper named for its supposed resemblance to a Scottish tam o' shanter bonnet. It is native to the Americas—a cult"
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "SW": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 20
+    },
+    {
+      "id": "birds-eye",
+      "species": "Capsicum frutescens / annuum",
+      "shu_min": 50000,
+      "shu_max": 100000,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M32 58C30 52 28 46 28 38\" stroke=\"#2E7D32\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M28 38C28 32 30 24 32 18C34 24 36 32 36 38C36 43 34 46 32 46C30 46 28 43 28 38Z\" fill=\"#F44336\"/><path d=\"M28 50C24 46 22 40 24 36\" stroke=\"#43A047\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/><ellipse cx=\"30\" cy=\"28\" rx=\"2\" ry=\"5\" fill=\"rgba(255,255,255,0.3)\" transform=\"rotate(-5,30,28)\"/></svg>",
+      "bg": "linear-gradient(145deg, #C62828 0%, #FF5252 100%)",
+      "confusion": "MED",
+      "translations": {
+        "TH": {
+          "name": "พริกขี้หนู (Phrik khii nuu)",
+          "etymology": "\"Fiente de souris\" — taille et forme",
+          "false_friend": "≠ พริกชี้ฟ้า = piment plus grand, moins fort"
+        },
+        "ID": {
+          "name": "Cabai rawit",
+          "etymology": "\"Piment sauvage/spontané\"",
+          "false_friend": ""
+        },
+        "EN": {
+          "name": "Bird's eye chilli / Bird chilli",
+          "etymology": "\"Œil d'oiseau\" — les oiseaux disséminent les graines",
+          "false_friend": ""
+        },
+        "FR": {
+          "name": "Piment oiseau",
+          "etymology": "Calque de l'anglais — même métaphore animale",
+          "false_friend": "TH dit \"souris\" ; FR/EN dit \"oiseau\" — même piment"
+        },
+        "SW": {
+          "name": "Pilipili ndogo",
+          "etymology": "\"Petit piment\"",
+          "false_friend": "Pilipili = terme générique swahili"
+        },
+        "VI": {
+          "name": "Ớt chỉ thiên",
+          "etymology": "\"Piment pointant vers le ciel\"",
+          "false_friend": ""
+        },
+        "KE": {
+          "name": "Pilipili kichaa",
+          "etymology": "\"Piment fou\"",
+          "false_friend": ""
+        },
+        "ZH": {
+          "name": "小米辣 (Xiǎomǐ là)",
+          "etymology": "\"Piment petit riz\"",
+          "false_friend": ""
+        },
+        "KO": {
+          "name": "청양고추 (Cheongyang gochu)",
+          "etymology": "Cultivar coréen similaire — de Cheongyang",
+          "false_friend": "Cultivar distinct mais souvent assimilé"
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": false,
+          "source_url": "",
+          "extract": ""
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ZH": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "TH": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "SW": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "VI": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "KO": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 0
+    },
+    {
+      "id": "banana-pepper",
+      "species": "Capsicum annuum",
+      "shu_min": 0,
+      "shu_max": 500,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M10 14C12 8 20 8 30 12C42 17 52 26 54 36C56 44 52 50 46 48C38 44 28 34 18 22C12 16 8 18 10 14Z\" fill=\"#FDD835\"/><rect x=\"7\" y=\"8\" width=\"4\" height=\"10\" rx=\"2\" fill=\"#558B2F\" transform=\"rotate(-30,9,13)\"/><ellipse cx=\"22\" cy=\"18\" rx=\"5\" ry=\"4\" fill=\"rgba(255,255,255,0.3)\" transform=\"rotate(40,22,18)\"/></svg>",
+      "bg": "linear-gradient(145deg, #F57F17 0%, #FFF176 100%)",
+      "confusion": "HIGH",
+      "translations": {
+        "EN": {
+          "name": "Banana pepper / Yellow wax pepper",
+          "etymology": "Forme allongée jaune = banane",
+          "false_friend": ""
+        },
+        "IT": {
+          "name": "Pepperoni",
+          "etymology": "Pluriel de peperone (poivron)",
+          "false_friend": "EN \"pepperoni pizza\" attendu en IT = pizza aux poivrons, pas à la charcuterie"
+        },
+        "US": {
+          "name": "Banana pepper",
+          "etymology": "Idem EN",
+          "false_friend": "Sur pizza US : pepperoni = charcuterie épicée (rien à voir)"
+        },
+        "DE": {
+          "name": "Peperoni / Paprika",
+          "etymology": "Peperoni emprunté à l'italien",
+          "false_friend": "En DE : Peperoni = piment/poivron allongé ≠ charcuterie"
+        },
+        "FR": {
+          "name": "Piment banane / Poivron banane",
+          "etymology": "Calque de l'anglais",
+          "false_friend": ""
+        },
+        "ES": {
+          "name": "Pimiento morrón amarillo",
+          "etymology": "\"Pimiento\" + \"morrón\" (type) + \"amarillo\" (jaune)",
+          "false_friend": ""
+        },
+        "GR": {
+          "name": "Florina / Πιπεριά κέρατο",
+          "etymology": "\"Poivron corne\"",
+          "false_friend": ""
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": false,
+          "source_url": "",
+          "extract": ""
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "DE": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ES": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "IT": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 0
+    },
+    {
+      "id": "bhut-jolokia",
+      "species": "Capsicum chinense × frutescens",
+      "shu_min": 855000,
+      "shu_max": 1041427,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"3\" width=\"4\" height=\"9\" rx=\"2\" fill=\"#388E3C\"/><path d=\"M32 12C26 12 20 18 19 28C18 38 20 52 27 59C29 61 31 61 33 59C40 52 46 38 45 28C44 18 38 12 32 12Z\" fill=\"#BF360C\"/><path d=\"M20 28Q32 24 44 28\" stroke=\"#8D1A00\" stroke-width=\"2\" fill=\"none\"/><path d=\"M19 38Q32 34 45 38\" stroke=\"#8D1A00\" stroke-width=\"2\" fill=\"none\"/><path d=\"M20 47Q32 43 44 47\" stroke=\"#8D1A00\" stroke-width=\"2\" fill=\"none\"/><ellipse cx=\"25\" cy=\"20\" rx=\"3\" ry=\"5\" fill=\"rgba(255,255,255,0.2)\" transform=\"rotate(-15,25,20)\"/></svg>",
+      "bg": "linear-gradient(145deg, #4A148C 0%, #AB47BC 100%)",
+      "confusion": "MED",
+      "translations": {
+        "IN": {
+          "name": "ভোট জলকীয়া (Bhut Jolokia)",
+          "etymology": "Assamais : \"piment fantôme\" ou \"piment du peuple Bhutia\"",
+          "false_friend": "Champion du monde 2007–2011 — depuis détrôné"
+        },
+        "BD": {
+          "name": "নাগা মরিচ (Naga Morich)",
+          "etymology": "\"Piment Naga\" — peuple du Nagaland",
+          "false_friend": "≠ Bhut Jolokia au sens strict — cultivar voisin"
+        },
+        "EN": {
+          "name": "Ghost pepper",
+          "etymology": "Traduction littérale de \"bhut\" (fantôme en assamais)",
+          "false_friend": "Marketing l'a popularisé sous ce nom — simplifie la réalité"
+        },
+        "FR": {
+          "name": "Piment fantôme",
+          "etymology": "Calque de Ghost pepper",
+          "false_friend": ""
+        },
+        "DE": {
+          "name": "Geisterpfeffer",
+          "etymology": "\"Poivre fantôme\"",
+          "false_friend": ""
+        },
+        "IN_NEP": {
+          "name": "Raja mircha",
+          "etymology": "\"Piment roi\" — utilisé comme arme (grenades lacrymo locales)",
+          "false_friend": ""
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": true,
+          "source_url": "https://en.wikipedia.org/wiki/Ghost_pepper",
+          "extract": "The ghost pepper, also known as bhut jolokia or naga jolokia, is a superhot chili pepper cultivated in Northeast India.\nIn 2007, Guinness World Record"
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "DE": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 20
+    },
+    {
+      "id": "cayenne",
+      "species": "Capsicum annuum",
+      "shu_min": 30000,
+      "shu_max": 50000,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"3\" width=\"4\" height=\"8\" rx=\"2\" fill=\"#2E7D32\"/><path d=\"M32 11C28 11 24 15 22 22C20 30 20 43 22 53C24 58 28 62 32 61C36 60 38 56 39 51C40 41 40 28 38 20C36 14 34 11 32 11Z\" fill=\"#D32F2F\"/><ellipse cx=\"27\" cy=\"22\" rx=\"2\" ry=\"7\" fill=\"rgba(255,255,255,0.28)\" transform=\"rotate(-10,27,22)\"/></svg>",
+      "bg": "linear-gradient(145deg, #BF360C 0%, #FF7043 100%)",
+      "confusion": "MED",
+      "translations": {
+        "FR": {
+          "name": "Piment de Cayenne",
+          "etymology": "De Cayenne, capitale de Guyane française",
+          "false_friend": "Nommé Guyane — cultivé principalement Inde, Chine, Louisiane"
+        },
+        "EN": {
+          "name": "Cayenne pepper",
+          "etymology": "Idem",
+          "false_friend": "Le nom géographique ne correspond plus à l'origine réelle"
+        },
+        "ES": {
+          "name": "Pimienta de Cayena",
+          "etymology": "Idem",
+          "false_friend": ""
+        },
+        "IN": {
+          "name": "Lal mirch",
+          "etymology": "\"Piment rouge\" — premier producteur mondial",
+          "false_friend": ""
+        },
+        "DE": {
+          "name": "Cayennepfeffer",
+          "etymology": "Calque",
+          "false_friend": ""
+        },
+        "IT": {
+          "name": "Peperoncino di Cayenna",
+          "etymology": "Calque",
+          "false_friend": ""
+        },
+        "ZH": {
+          "name": "卡宴辣椒 (Kǎyàn làjiāo)",
+          "etymology": "Translittération + 辣椒",
+          "false_friend": ""
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": true,
+          "source_url": "https://en.wikipedia.org/wiki/Cayenne_pepper",
+          "extract": "The cayenne pepper is a type of Capsicum annuum. It is usually a hot chili pepper used to flavor dishes. Cayenne peppers are a group of tapering, 10 t"
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "DE": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ES": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "IT": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ZH": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 12
+    },
+    {
+      "id": "carolina-reaper",
+      "species": "Capsicum chinense",
+      "shu_min": 1400000,
+      "shu_max": 2200000,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"3\" width=\"4\" height=\"9\" rx=\"2\" fill=\"#1B5E20\"/><path d=\"M32 12C22 12 16 20 16 30C16 40 22 50 30 54L32 55L34 54C42 50 48 40 48 30C48 20 42 12 32 12Z\" fill=\"#B71C1C\"/><circle cx=\"25\" cy=\"26\" r=\"3\" fill=\"#7B0000\"/><circle cx=\"39\" cy=\"28\" r=\"3\" fill=\"#7B0000\"/><circle cx=\"28\" cy=\"37\" r=\"2.5\" fill=\"#7B0000\"/><circle cx=\"38\" cy=\"40\" r=\"2.5\" fill=\"#7B0000\"/><path d=\"M32 55C31 58 30 62 29 64C31 65 33 64 32 62C32 59 33 57 34 55Z\" fill=\"#B71C1C\"/><ellipse cx=\"24\" cy=\"18\" rx=\"5\" ry=\"3\" fill=\"rgba(255,255,255,0.22)\"/></svg>",
+      "bg": "linear-gradient(145deg, #7B0000 0%, #C62828 100%)",
+      "confusion": "LOW",
+      "translations": {
+        "EN": {
+          "name": "Carolina Reaper",
+          "etymology": "Caroline du Sud + \"faucheur\" (la Mort)",
+          "false_friend": "Code lab : HP22BNJ7 — identité sans ambiguïté"
+        },
+        "FR": {
+          "name": "Carolina Reaper",
+          "etymology": "Non traduit",
+          "false_friend": ""
+        },
+        "DE": {
+          "name": "Carolina Reaper",
+          "etymology": "Non traduit",
+          "false_friend": ""
+        },
+        "ES": {
+          "name": "Carolina Reaper",
+          "etymology": "Non traduit",
+          "false_friend": ""
+        },
+        "ZH": {
+          "name": "卡罗来纳死神椒 (Kǎluóláinà sǐshén jiāo)",
+          "etymology": "\"Piment dieu de la mort de Caroline\"",
+          "false_friend": ""
+        },
+        "JP": {
+          "name": "キャロライナ・リーパー",
+          "etymology": "Translittération",
+          "false_friend": ""
+        },
+        "KO": {
+          "name": "캐롤라이나 리퍼 (Kaerrollaina Ripeo)",
+          "etymology": "Translittération",
+          "false_friend": ""
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": true,
+          "source_url": "https://en.wikipedia.org/wiki/Carolina_Reaper",
+          "extract": "The Carolina Reaper chili pepper is a cultivar of the Capsicum chinense plant. Developed by American breeder Ed Currie, the pepper is red and gnarled,"
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "DE": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ES": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "JP": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ZH": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "KO": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 11
+    },
+    {
+      "id": "pimiento-pimento",
+      "species": "Capsicum annuum",
+      "shu_min": 0,
+      "shu_max": 500,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"3\" width=\"4\" height=\"9\" rx=\"2\" fill=\"#388E3C\"/><path d=\"M32 20C32 17 29 12 24 12C18 12 13 17 13 23C13 33 22 43 32 54C42 43 51 33 51 23C51 17 46 12 40 12C35 12 32 17 32 20Z\" fill=\"#E53935\"/><ellipse cx=\"20\" cy=\"20\" rx=\"5\" ry=\"6\" fill=\"rgba(255,255,255,0.28)\"/></svg>",
+      "bg": "linear-gradient(145deg, #B71C1C 0%, #FF8A80 100%)",
+      "confusion": "HIGH",
+      "translations": {
+        "ES": {
+          "name": "Pimiento / Pimentón",
+          "etymology": "Pimiento = légume frais ; pimentón = séché",
+          "false_friend": "≠ EN pimento = olive stuffing (confiture de poivron) ≠ ES pimiento"
+        },
+        "EN": {
+          "name": "Pimento / Pimiento",
+          "etymology": "Du castillan, deux graphies pour le même mot",
+          "false_friend": "Pimento en EN = surtout la farce rouge dans les olives farcies"
+        },
+        "PT": {
+          "name": "Pimento",
+          "etymology": "Même racine",
+          "false_friend": "≠ Pimenta = poivre/piment fort"
+        },
+        "FR": {
+          "name": "Piment doux / Poivron allongé",
+          "etymology": "Selon la variété",
+          "false_friend": ""
+        },
+        "IT": {
+          "name": "Peperone dolce",
+          "etymology": "\"Poivron doux\"",
+          "false_friend": ""
+        },
+        "DE": {
+          "name": "Paprika (mild)",
+          "etymology": "Terme générique",
+          "false_friend": ""
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": false,
+          "source_url": "",
+          "extract": ""
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "DE": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ES": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "PT": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "IT": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 0
+    },
+    {
+      "id": "aji-amarillo",
+      "species": "Capsicum baccatum",
+      "shu_min": 30000,
+      "shu_max": 50000,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"3\" width=\"4\" height=\"9\" rx=\"2\" fill=\"#43A047\"/><path d=\"M32 12C25 12 18 18 17 28C16 38 20 51 27 57C29 59 31 60 33 58C40 52 47 40 46 28C45 18 39 12 32 12Z\" fill=\"#FF8F00\"/><ellipse cx=\"25\" cy=\"22\" rx=\"3\" ry=\"7\" fill=\"rgba(255,255,255,0.28)\" transform=\"rotate(-12,25,22)\"/></svg>",
+      "bg": "linear-gradient(145deg, #F9A825 0%, #FFF176 100%)",
+      "confusion": "MED",
+      "translations": {
+        "PE": {
+          "name": "Ají amarillo",
+          "etymology": "\"Piment jaune\" — pilier de la cuisine péruvienne",
+          "false_friend": "Quasi inexistant hors des Amériques — souvent substitué par Habanero (tort)"
+        },
+        "ES": {
+          "name": "Ají amarillo / Chile amarillo",
+          "etymology": "Ají = mot taïno (Caraïbes) pour tout piment",
+          "false_friend": "≠ Ají en Argentine/Chili = terme générique différent"
+        },
+        "EN": {
+          "name": "Peruvian yellow pepper / Aji amarillo",
+          "etymology": "Calque ou translittération",
+          "false_friend": "Rarement disponible frais hors Pérou — vendu en pâte en bocal"
+        },
+        "FR": {
+          "name": "Ají amarillo",
+          "etymology": "Non traduit",
+          "false_friend": "Quasi inconnu en France — importé en conserve depuis les années 2010"
+        },
+        "IT": {
+          "name": "Ají amarillo",
+          "etymology": "Non traduit",
+          "false_friend": ""
+        },
+        "QU": {
+          "name": "Uchu (générique)",
+          "etymology": "Quechua : uchu = tout piment",
+          "false_friend": "Aucun mot spécifique quechua pour cette variété précise"
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": false,
+          "source_url": "",
+          "extract": ""
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ES": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "IT": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 0
+    },
+    {
+      "id": "rocoto-locoto",
+      "species": "Capsicum pubescens",
+      "shu_min": 30000,
+      "shu_max": 100000,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"4\" width=\"4\" height=\"9\" rx=\"2\" fill=\"#2E7D32\"/><circle cx=\"32\" cy=\"38\" r=\"22\" fill=\"#C62828\"/><circle cx=\"26\" cy=\"36\" r=\"2\" fill=\"rgba(0,0,0,0.45)\"/><circle cx=\"36\" cy=\"41\" r=\"2\" fill=\"rgba(0,0,0,0.45)\"/><circle cx=\"31\" cy=\"46\" r=\"2\" fill=\"rgba(0,0,0,0.45)\"/><ellipse cx=\"22\" cy=\"26\" rx=\"7\" ry=\"5\" fill=\"rgba(255,255,255,0.28)\" transform=\"rotate(-20,22,26)\"/></svg>",
+      "bg": "linear-gradient(145deg, #880E4F 0%, #F48FB1 100%)",
+      "confusion": "MED",
+      "translations": {
+        "PE": {
+          "name": "Rocoto",
+          "etymology": "Quechua \"rukutu\"",
+          "false_friend": "Seul Capsicum avec graines noires et feuilles velues — morphologiquement unique"
+        },
+        "BO": {
+          "name": "Locoto",
+          "etymology": "Variante quechua",
+          "false_friend": "≠ Rocoto péruvien au sens strict — même espèce, noms régionaux différents"
+        },
+        "ES": {
+          "name": "Rocoto / Locoto / Caballo",
+          "etymology": "\"Caballo\" = cheval en espagnol — référence à la puissance",
+          "false_friend": "Caballo en Équateur, Rocoto au Pérou, Locoto en Bolivie — même chose"
+        },
+        "EN": {
+          "name": "Manzano pepper / Rocoto",
+          "etymology": "\"Manzano\" = pomme — forme arrondie",
+          "false_friend": "Seul Capsicum qui pousse en altitude (2000–3500m) — contexte agro unique"
+        },
+        "DE": {
+          "name": "Rocoto-Chili",
+          "etymology": "Emprunté",
+          "false_friend": ""
+        },
+        "QU": {
+          "name": "Rukutu",
+          "etymology": "Origine étymologique directe",
+          "false_friend": ""
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": false,
+          "source_url": "",
+          "extract": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "DE": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ES": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 0
+    },
+    {
+      "id": "shishito-padron",
+      "species": "Capsicum annuum",
+      "shu_min": 50,
+      "shu_max": 2500,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"3\" width=\"4\" height=\"8\" rx=\"2\" fill=\"#558B2F\"/><path d=\"M32 11C27 11 22 15 21 23C20 30 21 38 23 46C25 52 28 57 30 59C31 60 33 60 34 59C36 57 39 52 41 46C43 38 44 30 43 23C42 15 37 11 32 11Z\" fill=\"#8BC34A\"/><path d=\"M21 27Q32 24 43 27\" stroke=\"#558B2F\" stroke-width=\"1.5\" fill=\"none\"/><path d=\"M21 36Q32 33 43 36\" stroke=\"#558B2F\" stroke-width=\"1.5\" fill=\"none\"/><path d=\"M22 45Q32 42 42 45\" stroke=\"#558B2F\" stroke-width=\"1.5\" fill=\"none\"/><ellipse cx=\"26\" cy=\"18\" rx=\"3\" ry=\"5\" fill=\"rgba(255,255,255,0.28)\" transform=\"rotate(-8,26,18)\"/></svg>",
+      "bg": "linear-gradient(145deg, #558B2F 0%, #C5E1A5 100%)",
+      "confusion": "HIGH",
+      "translations": {
+        "JP": {
+          "name": "獅子唐辛子 (Shishitō)",
+          "etymology": "\"Piment tête de lion\" — pointe ressemble à une tête de lion",
+          "false_friend": "1 sur 10 est fort — même piment, résultat imprévisible"
+        },
+        "ES": {
+          "name": "Pimiento de Padrón",
+          "etymology": "De Padrón, Galice, Espagne",
+          "false_friend": "Même concept que shishito : la plupart doux, quelques-uns forts"
+        },
+        "EN": {
+          "name": "Shishito / Padrón pepper",
+          "etymology": "Emprunté aux langues d'origine",
+          "false_friend": "Souvent interchangeables dans les recettes tapas/yakitori — cultivars distincts"
+        },
+        "FR": {
+          "name": "Piment de Padrón / Shishito",
+          "etymology": "Non traduits",
+          "false_friend": ""
+        },
+        "GL": {
+          "name": "Pemento de Padrón",
+          "etymology": "Galicien : pemento = piment",
+          "false_friend": "AOP galicienne — \"os de Padrón, uns pican e outros non\" (proverbe)"
+        },
+        "DE": {
+          "name": "Shishito / Padrón-Paprika",
+          "etymology": "Emprunté",
+          "false_friend": ""
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": false,
+          "source_url": "",
+          "extract": ""
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "DE": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ES": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "JP": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 0
+    },
+    {
+      "id": "gochugaru",
+      "species": "Capsicum annuum",
+      "shu_min": 4000,
+      "shu_max": 8000,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><ellipse cx=\"32\" cy=\"54\" rx=\"24\" ry=\"7\" fill=\"#B71C1C\" opacity=\"0.5\"/><path d=\"M16 44L20 39L23 44L19 49Z\" fill=\"#D32F2F\"/><path d=\"M27 35L31 30L35 35L31 40Z\" fill=\"#E53935\"/><path d=\"M38 41L43 37L46 42L41 47Z\" fill=\"#D32F2F\"/><path d=\"M21 51L25 47L27 51L23 55Z\" fill=\"#C62828\"/><path d=\"M35 49L39 45L41 49L37 53Z\" fill=\"#C62828\"/><path d=\"M11 49L14 46L16 50L13 53Z\" fill=\"#E53935\"/><path d=\"M46 48L49 45L51 49L48 52Z\" fill=\"#C62828\"/><ellipse cx=\"32\" cy=\"56\" rx=\"22\" ry=\"5\" fill=\"#B71C1C\" opacity=\"0.7\"/></svg>",
+      "bg": "linear-gradient(145deg, #B71C1C 0%, #EF9A9A 100%)",
+      "confusion": "MED",
+      "translations": {
+        "KO": {
+          "name": "고춧가루 (Gochugaru)",
+          "etymology": "\"Poudre de piment\" (gochu = piment, garu = poudre)",
+          "false_friend": "≠ Gochujang = pâte fermentée à base de gochugaru — produit transformé"
+        },
+        "EN": {
+          "name": "Korean red pepper flakes",
+          "etymology": "Description fonctionnelle",
+          "false_friend": "≠ chili flakes génériques — texture et arôme spécifiques, pas substituables"
+        },
+        "FR": {
+          "name": "Flocons de piment coréen",
+          "etymology": "Traduction fonctionnelle",
+          "false_friend": "Piment frais ≠ gochugaru — le séchage crée un produit différent"
+        },
+        "ZH": {
+          "name": "韩国辣椒粉 (Hánguó làjiāofěn)",
+          "etymology": "\"Poudre de piment coréen\"",
+          "false_friend": ""
+        },
+        "JP": {
+          "name": "韓国唐辛子 (Kankoku tōgarashi)",
+          "etymology": "\"Piment coréen\"",
+          "false_friend": ""
+        },
+        "DE": {
+          "name": "Koreanisches Chilipulver",
+          "etymology": "Traduction descriptive",
+          "false_friend": ""
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": true,
+          "source_url": "https://en.wikipedia.org/wiki/Chili_powder",
+          "extract": "Chili powder is the dried, pulverized fruit of one or more varieties of chili pepper, sometimes with the addition of other spices. It is used as a spi"
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "DE": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "JP": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ZH": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "KO": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 12
+    },
+    {
+      "id": "sichuan-pepper",
+      "species": "Zanthoxylum simulans / bungeanum",
+      "shu_min": 0,
+      "shu_max": 0,
+      "icon_svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M32 58C32 50 28 42 22 36M32 58C32 50 36 42 42 36M32 50C32 42 32 36 32 28\" stroke=\"#5D4037\" stroke-width=\"2.5\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"32\" cy=\"22\" r=\"8\" fill=\"#EC407A\"/><path d=\"M32 14L34 19L39 19L35 22L37 27L32 24L27 27L29 22L25 19L30 19Z\" fill=\"rgba(255,255,255,0.35)\"/><circle cx=\"20\" cy=\"34\" r=\"6\" fill=\"#E91E63\"/><circle cx=\"44\" cy=\"34\" r=\"6\" fill=\"#E91E63\"/><path d=\"M20 28L21 31L24 31L22 33L23 36L20 34L17 36L18 33L16 31L19 31Z\" fill=\"rgba(255,255,255,0.3)\"/><path d=\"M44 28L45 31L48 31L46 33L47 36L44 34L41 36L42 33L40 31L43 31Z\" fill=\"rgba(255,255,255,0.3)\"/></svg>",
+      "bg": "linear-gradient(145deg, #AD1457 0%, #F06292 100%)",
+      "confusion": "CHAOS",
+      "translations": {
+        "ZH": {
+          "name": "花椒 (Huājiāo)",
+          "etymology": "\"Poivre-fleur\"",
+          "false_friend": "≠ 辣椒 (làjiāo) = Capsicum — deux règnes différents, aucun lien"
+        },
+        "EN": {
+          "name": "Sichuan pepper / Szechuan pepper",
+          "etymology": "De la province de Sichuan + \"pepper\" (erreur)",
+          "false_friend": "PAS un Capsicum — genre Zanthoxylum (famille Rutacée, comme les agrumes)"
+        },
+        "FR": {
+          "name": "Poivre du Sichuan / Baies de Sichuan",
+          "etymology": "\"Poivre\" est un faux-ami — pas un poivre non plus (Piper)",
+          "false_friend": "Triple faux-ami : ≠ Capsicum, ≠ Piper nigrum — troisième règne végétal"
+        },
+        "DE": {
+          "name": "Sichuanpfeffer",
+          "etymology": "\"Pfeffer de Sichuan\"",
+          "false_friend": "Interdit à l'importation UE jusqu'en 2004 — risque phytosanitaire"
+        },
+        "JP": {
+          "name": "山椒 (Sanshō)",
+          "etymology": "\"Poivre de montagne\"",
+          "false_friend": "Sanshō = variété japonaise du même genre Zanthoxylum — cousin, pas identique"
+        },
+        "KO": {
+          "name": "초피 (Chopi)",
+          "etymology": "Propre au coréen",
+          "false_friend": "≠ 고추 = piment Capsicum"
+        },
+        "IT": {
+          "name": "Pepe di Sichuan",
+          "etymology": "Calque",
+          "false_friend": "L'effet anesthésiant (paresthésie) est absent des vrais poivres"
+        },
+        "ES": {
+          "name": "Pimienta de Sichuan",
+          "etymology": "Calque",
+          "false_friend": ""
+        }
+      },
+      "sources": {
+        "_species": {
+          "verified": false,
+          "source_url": "",
+          "source_name": "USDA GRIN",
+          "note": ""
+        },
+        "_wikipedia_en": {
+          "verified": false,
+          "source_url": "",
+          "extract": ""
+        },
+        "FR": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "EN": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "DE": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ES": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "IT": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "JP": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "ZH": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        },
+        "KO": {
+          "verified": false,
+          "source_url": "",
+          "source_name": ""
+        }
+      },
+      "verification_score": 0
+    }
+  ],
+  "total": 22
+}
