@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veille — Figurines dino Schleich</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #0f0f11;
+    --surface:  #18181c;
+    --border:   #2a2a30;
+    --text:     #f0ede8;
+    --muted:    #8a8694;
+    --accent:   #e8a87c;
+    --like:     #f06292;
+    --excl:     #ef5350;
+    --tag-bg:   #23232a;
+    --tag-txt:  #b8b4c8;
+    --radius:   10px;
+    --mono:     'IBM Plex Mono', monospace;
+    --sans:     'Inter', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 1rem; line-height: 1.6; min-height: 100vh; }
+
+  /* HEADER */
+  header { padding: 4rem 2rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+  .eyebrow { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.75rem; }
+  header h1 { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 700; line-height: 1.2; margin-bottom: 0.5rem; }
+  .meta { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); }
+
+  /* FILTERS */
+  .filter-bar { max-width: 1100px; margin: 0 auto; padding: 0 2rem 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+  .filter-label { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-right: 0.25rem; }
+  .tag-filter { background: var(--tag-bg); color: var(--tag-txt); border: 1px solid var(--border); border-radius: 20px; padding: 0.3rem 0.85rem; font-family: var(--mono); font-size: 0.7rem; cursor: pointer; transition: background 200ms, border-color 200ms, color 200ms; user-select: none; }
+  .tag-filter:hover { border-color: var(--accent); color: var(--accent); }
+  .tag-filter.active { background: var(--accent); border-color: var(--accent); color: #0f0f11; font-weight: 600; }
+
+  /* GRID */
+  .grid { max-width: 1100px; margin: 0 auto; padding: 0 2rem 4rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+
+  /* CARD */
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.9rem; transition: border-color 200ms, transform 200ms; }
+  .card:hover { border-color: #3a3a44; transform: translateY(-2px); }
+  .card.hidden { display: none; }
+  .card-url { font-family: var(--mono); font-size: 0.82rem; font-weight: 500; color: var(--accent); text-decoration: none; word-break: break-all; line-height: 1.4; }
+  .card-url:hover { text-decoration: underline; }
+  .card-desc { font-size: 0.9rem; color: var(--text); line-height: 1.65; flex: 1; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tag { background: var(--tag-bg); color: var(--tag-txt); border: 1px solid var(--border); border-radius: 20px; padding: 0.2rem 0.6rem; font-family: var(--mono); font-size: 0.65rem; cursor: pointer; transition: border-color 150ms, color 150ms; user-select: none; }
+  .tag:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ACTIONS */
+  .card-actions { display: flex; gap: 0.65rem; margin-top: 0.25rem; }
+  .btn-action { height: 48px; padding: 0 1.25rem; border: 1px solid var(--border); border-radius: 8px; background: transparent; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; transition: background 150ms, border-color 150ms, color 150ms; flex: 1; justify-content: center; }
+  .btn-like { color: var(--like); border-color: color-mix(in srgb, var(--like) 35%, transparent); }
+  .btn-like:hover { background: color-mix(in srgb, var(--like) 12%, transparent); border-color: var(--like); }
+  .btn-like.liked { background: color-mix(in srgb, var(--like) 18%, transparent); border-color: var(--like); }
+  .btn-excl { color: var(--excl); border-color: color-mix(in srgb, var(--excl) 30%, transparent); }
+  .btn-excl:hover { background: color-mix(in srgb, var(--excl) 12%, transparent); border-color: var(--excl); }
+  .btn-excl.excluded { background: color-mix(in srgb, var(--excl) 18%, transparent); border-color: var(--excl); }
+
+  @keyframes pop { 0% { transform: scale(1); } 40% { transform: scale(1.18); } 70% { transform: scale(0.94); } 100% { transform: scale(1); } }
+  .btn-action.pop { animation: pop 280ms ease-out; }
+  @media (prefers-reduced-motion: reduce) { .btn-action.pop { animation: none; } .card { transition: none; } }
+
+  /* TOAST */
+  #toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(6px); background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.7rem 1.4rem; border-radius: 8px; font-size: 0.85rem; font-family: var(--mono); opacity: 0; pointer-events: none; transition: opacity 200ms, transform 200ms; white-space: nowrap; z-index: 999; }
+  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* PANEL BAS */
+  .section-divider { max-width: 1100px; margin: 0 auto 1.5rem; padding: 0 2rem; border-top: 1px solid var(--border); }
+  .section-divider h2 { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; padding-top: 1.5rem; }
+  #session-panel { max-width: 1100px; margin: 0 auto; padding: 0 2rem 6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  @media (max-width: 720px) { #session-panel { grid-template-columns: 1fr; } }
+  .session-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; }
+  .session-block h3 { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.9rem; }
+  .session-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+  .session-list li { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); word-break: break-all; }
+  .session-list li .dot-like { color: var(--like); margin-right: 0.4rem; }
+  .session-list li .dot-excl { color: var(--excl); margin-right: 0.4rem; }
+  .session-empty { font-family: var(--mono); font-size: 0.75rem; color: var(--border); font-style: italic; }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">Veilleur — Session 22.03.2026</p>
+  <h1>Figurines dino Schleich<br>Vitrine e-commerce</h1>
+  <p class="meta">10 refs retenues &nbsp;·&nbsp; girly/choupi/ludique &nbsp;·&nbsp; collectionneurs &amp; parents &nbsp;·&nbsp; audience Vinted</p>
+</header>
+
+<div class="filter-bar" id="filter-bar">
+  <span class="filter-label">Filtrer</span>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<div class="section-divider"><h2>Sélection</h2></div>
+
+<div id="session-panel">
+  <div class="session-block">
+    <h3>Likés</h3>
+    <ul class="session-list" id="list-liked">
+      <li class="session-empty">Aucun like pour l'instant</li>
+    </ul>
+  </div>
+  <div class="session-block">
+    <h3>Exclus</h3>
+    <ul class="session-list" id="list-excl">
+      <li class="session-empty">Aucune exclusion pour l'instant</li>
+    </ul>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+const REFS = [
+  {
+    url: "https://www.jellycat.com",
+    desc: "Palette crème/nude/pastel rose. Typographie serif-round choisie avec intention. Storytelling par objet — chaque peluche est un personnage. Micro-copy soigné (\"sharing joy since 1999\"). Mécanique émotionnelle rare en e-commerce. Pas un template — identité construite de bout en bout.",
+    tags: ["brand","collectible","plush","storytelling","pastel","editorial"]
+  },
+  {
+    url: "https://www.maileg.com",
+    desc: "Palette naturelle/crème/nude danois. Photo lifestyle narrative très soignée. Collections limitées = mécanique collector forte. Design danois minimaliste chaud — espace négatif assumé. UX centré sur le \"monde\" de la figurine plutôt que sur le produit seul.",
+    tags: ["collectible","danois","storytelling","minimaliste","limité"]
+  },
+  {
+    url: "https://www.moulinroty.com/en/",
+    desc: "Palette illustrée colorée douce. Chaque collection a une histoire avec illustrations maison — les visuels ne sont jamais du stock. Coopérative ouvrière française, 50 ans. Typographie narrative éditoriale, ton poétique assumé. Signal fort pour cible parents/collectionneurs.",
+    tags: ["fr","illustration","enfant","narrative","brand","coopérative"]
+  },
+  {
+    url: "https://www.smallable.com/en",
+    desc: "Concept-store parisien famille. Éditorial fort + magazine intégré dans le shop. Typographie serif clean. Curation 750+ marques avec hiérarchie visuelle maîtrisée. Espace blanc choisi, layout catalogue avec tension éditoriale.",
+    tags: ["fr","paris","editorial","famille","magazine","curation"]
+  },
+  {
+    url: "https://www.kidrobot.com",
+    desc: "Art toy brand US. Identité contreculturelle assumée. Typographie géométrique ITC Avant Garde Gothic. Layout sombre collectibles-first. Limited edition = mécanique forte, \"designer toy\" positionné premium. Signal utile pour la cible collectionneurs adultes.",
+    tags: ["us","arttoy","limité","dark","collectible","geek"]
+  },
+  {
+    url: "https://www.artofplay.com",
+    desc: "Premium curiosités/cartes/jeux. Minimal très maîtrisé. Typographie choisie, photo produit artistique haute qualité. Claim : \"wonder by design\". Espace négatif généreux, gamme cohérente de bout en bout.",
+    tags: ["us","premium","minimaliste","jeux","wonder","photoproduit"]
+  },
+  {
+    url: "https://www.sideshow.com",
+    desc: "Collectibles premium pop culture. Dark aesthetic assumé, typographie display grande, storytelling produit très développé. Précommandes + waiting list = mécanique collector très forte. Détail produit sur fond sombre — museum-grade dans l'intention.",
+    tags: ["us","dark","premium","collectible","storytelling","popculture"]
+  },
+  {
+    url: "https://www.lladro.com/en_us/",
+    desc: "Porcelaine art espagnole, 1953. Minimalist luxury blanc/or. Serif éditorial, espace blanc généreux = présentation muséale. Refonte récente axée \"luxury & exclusiveness + digital accessibility\". Editorial lifestyle sur produits de collection.",
+    tags: ["es","luxury","premium","minimaliste","editorial","porcelaine"]
+  },
+  {
+    url: "https://adorno.design",
+    desc: "Galerie numérique collectibles design contemporain, Copenhagen. Curation internationale par des curators terrain. Clean curator's gallery, layout éditorial sobre, typographie choisie. Aucun template reconnaissable — chaque décision est visible.",
+    tags: ["dk","galerie","curation","editorial","collectible","minimaliste"]
+  },
+  {
+    url: "https://www.papo-france.com/en",
+    desc: "Marque française figurines animaux/dinos/médiéval. Main-peint, \"imaginé conçu développé en France\". Positionnement collectionneurs + enfants. Dinosaures hand-painted basés sur recherches paléontologiques. Concurrent direct Schleich, signal de référence sectorielle.",
+    tags: ["fr","dinos","figurine","craft","collectible","enfant"]
+  }
+];
+
+const LS_LIKED = 'veille-liked-dino';
+const LS_EXCL  = 'veille-excl-dino';
+
+function loadSet(key) {
+  try { return new Set(JSON.parse(localStorage.getItem(key) || '[]')); }
+  catch { return new Set(); }
+}
+function saveSet(key, set) {
+  localStorage.setItem(key, JSON.stringify([...set]));
+}
+
+const liked = loadSet(LS_LIKED);
+const excl  = loadSet(LS_EXCL);
+
+// Filters
+const allTags = [...new Set(REFS.flatMap(r => r.tags))].sort();
+let activeTag = null;
+const filterBar = document.getElementById('filter-bar');
+
+const allBtn = document.createElement('button');
+allBtn.className = 'tag-filter active';
+allBtn.textContent = 'Tous';
+allBtn.dataset.tag = '';
+filterBar.appendChild(allBtn);
+
+allTags.forEach(tag => {
+  const btn = document.createElement('button');
+  btn.className = 'tag-filter';
+  btn.textContent = tag;
+  btn.dataset.tag = tag;
+  filterBar.appendChild(btn);
+});
+
+filterBar.addEventListener('click', e => {
+  const btn = e.target.closest('.tag-filter');
+  if (!btn) return;
+  activeTag = btn.dataset.tag || null;
+  document.querySelectorAll('.tag-filter').forEach(b => b.classList.toggle('active', b === btn));
+  applyFilter();
+});
+
+function applyFilter() {
+  document.querySelectorAll('.card').forEach(card => {
+    if (!activeTag) { card.classList.remove('hidden'); return; }
+    card.classList.toggle('hidden', !card.dataset.tags.split(',').includes(activeTag));
+  });
+}
+
+// Cards
+const grid = document.getElementById('grid');
+REFS.forEach(ref => {
+  const card = document.createElement('article');
+  card.className = 'card';
+  card.dataset.tags = ref.tags.join(',');
+  card.dataset.url  = ref.url;
+
+  const isLiked   = liked.has(ref.url);
+  const isExcluded = excl.has(ref.url);
+
+  card.innerHTML = `
+    <a class="card-url" href="${ref.url}" target="_blank" rel="noopener noreferrer">${ref.url}</a>
+    <p class="card-desc">${ref.desc}</p>
+    <div class="card-tags">${ref.tags.map(t => `<span class="tag" data-tag="${t}">${t}</span>`).join('')}</div>
+    <div class="card-actions">
+      <button class="btn-action btn-like${isLiked ? ' liked' : ''}" data-action="like">${isLiked ? '♥ Liké' : '♥ Liker'}</button>
+      <button class="btn-action btn-excl${isExcluded ? ' excluded' : ''}" data-action="excl">${isExcluded ? '✕ Exclu' : '✕ Exclure'}</button>
+    </div>
+  `;
+  grid.appendChild(card);
+});
+
+// Tag click inside card
+grid.addEventListener('click', e => {
+  const tag = e.target.closest('.tag');
+  if (tag) {
+    activeTag = tag.dataset.tag;
+    document.querySelectorAll('.tag-filter').forEach(b => b.classList.toggle('active', b.dataset.tag === activeTag));
+    applyFilter();
+    return;
+  }
+
+  const btn = e.target.closest('.btn-action');
+  if (!btn) return;
+  const card   = btn.closest('.card');
+  const url    = card.dataset.url;
+  const action = btn.dataset.action;
+  const isLike = action === 'like';
+  const set    = isLike ? liked : excl;
+  const lsKey  = isLike ? LS_LIKED : LS_EXCL;
+  const isActive = isLike ? btn.classList.contains('liked') : btn.classList.contains('excluded');
+
+  btn.classList.add('pop');
+  btn.addEventListener('animationend', () => btn.classList.remove('pop'), { once: true });
+
+  if (isActive) {
+    set.delete(url);
+    btn.classList.remove(isLike ? 'liked' : 'excluded');
+    btn.textContent = isLike ? '♥ Liker' : '✕ Exclure';
+    showToast(isLike ? 'Retiré des likés' : 'Retiré des exclusions');
+  } else {
+    set.add(url);
+    btn.classList.add(isLike ? 'liked' : 'excluded');
+    btn.textContent = isLike ? '♥ Liké' : '✕ Exclu';
+    showToast(isLike ? '♥ Ajouté aux likés' : '✕ Ajouté aux exclusions');
+  }
+
+  saveSet(lsKey, set);
+  renderPanel();
+});
+
+// Panel
+function renderPanel() {
+  renderList('list-liked', liked, 'dot-like', '♥');
+  renderList('list-excl',  excl,  'dot-excl', '✕');
+}
+
+function renderList(id, set, dotClass, symbol) {
+  const ul = document.getElementById(id);
+  ul.innerHTML = '';
+  if (set.size === 0) {
+    ul.innerHTML = '<li class="session-empty">Aucun élément pour l\'instant</li>';
+    return;
+  }
+  set.forEach(url => {
+    const li = document.createElement('li');
+    li.innerHTML = `<span class="${dotClass}">${symbol}</span>${url}`;
+    ul.appendChild(li);
+  });
+}
+
+// Toast
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+// Init panel depuis localStorage
+renderPanel();
+</script>
+</body>
+</html>
