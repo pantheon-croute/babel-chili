@@ -1,8 +1,8 @@
-# 🌶️ Babel des Piments
+# 🌶️ Babel Pimiento
 
 > *Pourquoi "pepper" désigne-t-il à la fois le poivre noir et le piment rouge ? Pourquoi "paprika" est un légume dans certaines langues et une épice dans d'autres ? Pourquoi "chili", "chilli" et "chile" coexistent en anglais ?*
 
-**Babel des Piments** est une encyclopédie interactive qui documente la confusion linguistique et botanique autour des piments à travers 24 langues et 22 variétés.
+**Babel Pimiento** est une encyclopédie interactive qui documente la confusion linguistique et botanique autour des piments à travers 24 langues et 22 variétés.
 
 ---
 
