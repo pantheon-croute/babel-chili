@@ -33,41 +33,43 @@
 
     /* ── App layout ── */
     #app {
-      display: flex;
-      flex-direction: row;
-      gap: 28px;
-      align-items: flex-start;
+      display: grid;
+      grid-template-areas:
+        ".         header"
+        "cartouche main";
+      grid-template-columns: 168px 1fr;
+      grid-template-rows: auto 1fr;
+      column-gap: 28px;
       width: min(calc(100vw - 48px), calc(168px + 28px + 780px));
+    }
+
+    /* ── Header ── */
+    header {
+      grid-area: header;
+      margin-top: 36px;
+      margin-bottom: 36px;
     }
 
     /* ── Cartouche gauche ── */
     #cartouche {
-      width: 168px;
-      flex-shrink: 0;
+      grid-area: cartouche;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 20px;
-      padding-top: 4px;
       position: sticky;
       top: 24px;
+      align-self: start;
     }
 
     /* ── Main (grid area) ── */
     #main {
-      flex: 1;
+      grid-area: main;
       min-width: 0;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       position: relative;
-    }
-
-    /* ── Header (inside #main) ── */
-    header {
-      align-self: flex-start;
-      margin-top: 36px;
-      margin-bottom: 36px;
     }
 
     .kicker {
@@ -457,12 +459,14 @@
       </div>
     </aside>
 
+    <!-- ── Header ── -->
+    <header>
+      <span class="kicker">🌶️ Linguistique végétale · Genre Capsicum</span>
+      <h1>Babel <span>Pimiento</span></h1>
+    </header>
+
     <!-- ── Zone grid + orbital ── -->
     <div id="main">
-      <header>
-        <span class="kicker">🌶️ Linguistique végétale · Genre Capsicum</span>
-        <h1>Babel <span>Pimiento</span></h1>
-      </header>
       <div class="grid-wrap">
         <div class="grid" id="grid"></div>
       </div>
